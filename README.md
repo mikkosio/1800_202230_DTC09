@@ -7,7 +7,7 @@
 ## General Info
 
 This browser based web application to ...
-Hi, my name is Mikko and I am excited about this project because I like.
+Hi, my name is Mikko and I am excited about this project because I like to.
 
 * Hi my name is Colin. I'm excited about this project because I think it will help people organize their lives!
 
