@@ -8,9 +8,9 @@
 
 This browser based web application to ...
 
-* Hi, my name is Calvin. I'm excited about this project because I get to learn new things.
-* Hi, my name is Mikko and I am excited about this project because I like scheduling.
-* Hi, my name is Colin. I'm excited about this project because I think it will help people organize their lives!
+* Hi my name is Calvin. I'm excited about this project because I get to learn new things and code.
+* Hi, my name is Mikko and I am excited about this project because I like to do things.
+* Hi my name is Colin. I'm excited about this project because I think it will help people organize their lives!
 
 ## Technologies
 
