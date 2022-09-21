@@ -7,14 +7,10 @@
 ## General Info
 
 This browser based web application to ...
-<<<<<<< HEAD
 
 * Hi my name is Calvin. I'm excited about this project because I get to learn new things.
-=======
-Hi, my name is Mikko and I am excited about this project because I like.
-
+* Hi, my name is Mikko and I am excited about this project because I like.
 * Hi my name is Colin. I'm excited about this project because I think it will help people organize their lives!
->>>>>>> 902c3028d2d549a1f01074e870b6740b6ceb3473
 
 ## Technologies
 
