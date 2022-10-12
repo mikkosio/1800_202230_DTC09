@@ -31,6 +31,35 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <h5 class="text-white h4">Collapsed content</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <a class="btn btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                ☰
+            </a>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="">
+                        Some text as placeholder. In real life you can have the elements you
+                        have chosen. Like, text, images, lists, etc.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!DOCTYPE html>
     <html lang="en">
 
