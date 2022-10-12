@@ -1,1 +1,6 @@
-
+.jumbotron {
+    border: black 5px;
+    width: 50%;
+    margin: 30%;
+    margin-top: 20%;
+}
