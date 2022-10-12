@@ -1,6 +1,7 @@
 .jumbotron {
     border: black 5px;
     width: 50%;
+<<<<<<< HEAD
     margin: 30%;
     margin-top: 20%;
 }
@@ -9,4 +10,32 @@
     float: right;
     margin: 5px;
     padding: 5px;
+=======
+    margin-top: 0%;
+    padding-top: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.card {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    clear: left;
+}
+
+.lead {
+    float: left;
+    text-align: center;
+
+}
+
+h1 {
+    display: inline-block;
+}
+
+p {
+    text-align: right;
+    float: right;
+>>>>>>> 25857ceca3a14be1bedc30d101c19a4f058b76be
 }
