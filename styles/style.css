@@ -4,3 +4,9 @@
     margin: 30%;
     margin-top: 20%;
 }
+
+.icons a {
+    float: right;
+    margin: 5px;
+    padding: 5px;
+}
