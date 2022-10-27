@@ -6,6 +6,25 @@
 </div>
 <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Hello <span class='name-goes-here'></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <a href=""> Home</a>
+                <a href=""> Task</a>
+                <a href=""> Calendar</a>
+                <a href=""> MonMon</a>
+                <a href=""> Milestones</a>
+
+                <div class="bottomicons">
+                    <a href=""> Settings</a>
+                    <a href=""> Logout</a>
+                </div>
+            </div>
+        </div>
         <a class="btn btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
             aria-controls="offcanvasExample">
             ☰
@@ -28,24 +47,5 @@
         </div>
 
 
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Hello {name}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <a href=""> Home</a>
-                <a href=""> Task</a>
-                <a href=""> Calendar</a>
-                <a href=""> MonMon</a>
-                <a href=""> Milestones</a>
-
-                <div class="bottomicons">
-                    <a href=""> Settings</a>
-                    <a href=""> Logout</a>
-                </div>
-            </div>
-        </div>
     </div>
 </nav>
