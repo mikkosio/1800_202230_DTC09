@@ -33,7 +33,6 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
-
 </head>
 
 <body>
@@ -44,22 +43,48 @@
     <!--Nav Bar-->
     <nav id="navbarplaceholder"></nav>
 
-    <div class="container text-center">
-        <img class="d-block mx-auto mb-4" src="./images/image.jpg" alt="Inter-Task-Tivity" width="200" height="200">
-        <h1 style="display: block">Welcome to Inter-Task-Tivity!</h1>
-        <a href="login.html" class="btn btn-secondary" role="button" style="clear: left">Log in</a>
+    <!--Welcome Jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome Back, <span id="name-goes-here"></span></h1>
+            <h3>Here are your urgent tasks.</h3>
+        </div>
     </div>
-    <!--Footer-->
-    <footer id="footerplaceholder"></footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+</body>
+<!--Task Reminder Cards-->
+</div>
+<div class="card">
+    <div class="card-body">
+        <h1>Task 1</h1>
+        <p style="margin-top: 12px">Time Remaining: ##:##</p>
 
-    <!-- Link to scripts of your own -->
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h1>Task 2</h1>
+        <p style="margin-top: 12px">Time Remaining: ##:##</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h1>Task 3</h1>
+        <p style="margin-top: 12px">Time Remaining: ##:##</p>
+    </div>
+</div>
+</div>
 
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+<!--Footer-->
+<footer id="footerplaceholder"></footer>
+<!---------------------------------------------->
+<!-- Your own JavaScript functions go here    -->
+<!---------------------------------------------->
+
+<!-- Link to scripts of your own -->
+<script src="./scripts/script.js"></script>
+<script src="./scripts/skeleton.js"></script>
+<script src="./scripts/firebaseAPI_TEAM09.js"></script>
+<script src="./scripts/main.js"></script>
 </body>
 
 </html>
