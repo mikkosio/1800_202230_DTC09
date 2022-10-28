@@ -2,99 +2,85 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Inter-Task-Tivity</title>
+        <meta name="comp1800 template" content="My 1800 App">
 
-        <!-- Bootstrap Library CSS CDN go here -->
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!------------------------------------------>
+        <!-- Bootstrap Library CSS JS CDN go here -->
+        <!------------------------------------------>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-        <!-- Boostrap Library JS CDN  go here -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="./styles/style.css">
+        <!-------------------------------------------------------->
+        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+        <!-------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet"
+            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
+        <!-------------------------------------------->
+        <!-- Other libraries and styles of your own -->
+        <!-------------------------------------------->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
     </head>
 
     <body>
 
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h5 class="text-white h4">Collapsed content</h5>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            </div>
-        </div>
-        <nav class="navbar navbar-dark bg-secondary">
-            <div class="container-fluid">
-                <a class="btn btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                    aria-controls="offcanvasExample">
-                    ☰
-                </a>
-                <div class=icons>
-                    <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="text-white"
-                            class="bi bi-plus" viewBox="0 0 16 16">
-                            <path
-                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg>
-                    </a>
-                    <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black"
-                            class="bi bi-calendar" viewBox="0 0 16 16">
-                            <path
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                    </a>
-                </div>
+        <!------------------------------>
+        <!-- Your HTML Layout go here -->
+        <!------------------------------>
+        <!--Nav Bar-->
+
+        <nav id="navbarplaceholder"></nav>
 
 
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-                    aria-labelledby="offcanvasExampleLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Hello {name}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <a href="./index.html"> Home</a>
-                        <a href=""> Task</a>
-                        <a href=""> Calendar</a>
-                        <a href=""> MonMon</a>
-                        <a href=""> Milestones</a>
-
-                        <div class="bottomicons">
-                            <a href=""> Settings</a>
-                            <a href=""> Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <h3 style="margin-top: 20px; margin-bottom: 20px; margin-left: 15px">Today</h3>
+        <!--Task Reminder Cards-->
         </div>
         <div class="card">
             <div class="card-body">
                 <h1>Task 1</h1>
-                <p>Time Remaining: ##:##</p>
+                <p style="margin-top: 12px">Time Remaining: ##:##</p>
+
             </div>
         </div>
         <div class="card">
             <div class="card-body">
                 <h1>Task 2</h1>
-                <p>Time Remaining: ##:##</p>
+                <p style="margin-top: 12px">Time Remaining: ##:##</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
                 <h1>Task 3</h1>
-                <p>Time Remaining: ##:##</p>
+                <p style="margin-top: 12px">Time Remaining: ##:##</p>
             </div>
         </div>
         </div>
-    </body>
+
+        <!--Footer-->
+        <footer id="footerplaceholder"></footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
+
+        <!-- Link to scripts of your own -->
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/skeleton.js"></script>
+        <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+        <script src="./scripts/main.js"></script>
+        <script src="./scripts/navbar.js"></script>
     </body>
 
 </html>
