@@ -42,14 +42,25 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!--Nav Bar-->
-    <!-- <nav id="navbarplaceholder"></nav> -->
+    <nav id="navbarplaceholder"></nav>
 
-    <!--Login Area-->
-    <div class="container">
-        <h1>Let's Login!</h1>
+    <div id="task">
+        <div class="mb-3" style="margin: 12px;">
+            <h4 for="exampleFormControlInput1" class="form-label">Task:</h4>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3" style="margin: 12px; margin-top: 20px;">
+            <h5 for="exampleFormControlTextarea1" class="form-label">Description:</h5>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
     </div>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader" style="text-align: center">Loading...</div>
+
+    <div id="deadline">
+        <h5 style="margin: 12px; margin-top: 30px; margin-bottom: 5px;">Deadline</h5>
+        <div class="col-lg-3 col-sm-6" style="margin: 12px; margin-top: 0;">
+            <input id="endDate" class="form-control" type="date">
+        </div>
+    </div>
 
     <!--Footer-->
     <footer id="footerplaceholder"></footer>
@@ -59,10 +70,12 @@
 
     <!-- Link to scripts of your own -->
 
-    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/dateandtime.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+
 </body>
+
 
 </html>
