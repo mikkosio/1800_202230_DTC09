@@ -43,49 +43,68 @@
         <!------------------------------>
         <!--Nav Bar-->
 
-        <nav id="navbarplaceholder" style="margin-bottom: 35px"></nav>
-
-        <h2 id="listname">My Tasks</h2>
+        <nav id="navbarplaceholder""></nav>
 
         <!--Task Reminder Cards-->
-        <div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Compete 1800 Assignment</h1>
-                    <p style="margin-top: 15px">Time Remaining: ##:##</p>
+
+        <h2 id = "listname" style = "margin: 50px auto;">My Tasks</h2>
+
+        <div class = "container2" style = "display: flex; justify-content: center; margin-top: 50px;">
+            <div class = "center" style = "width: 75%" >
+                <div class="list-group w-auto">
+                    <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                        <strong>Finish sales report</strong>
+                        <small class="d-block text-muted">
+                        <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#calendar-event"></use></svg>
+                        1:00–2:00pm
+                        </small>
+                    </span>
+                    </label>
+                    <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                        <strong >Weekly All Hands</strong>
+                        <small class="d-block text-muted">
+                        <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#calendar-event"></use></svg>
+                        2:00–2:30pm
+                        </small>
+                    </span>
+                    </label>
+                    <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                        <strong>Out of office</strong>
+                        <small class="d-block text-muted">
+                        <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#alarm"></use></svg>
+                        Tomorrow
+                        </small>
+                    </span>
+                    </label>
+                    <label class="list-group-item d-flex gap-3">
+                        <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                        <span class="pt-1 form-checked-content">
+                            <strong>Complete 1800</strong>
+                            <small class="d-block text-muted">
+                            <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#alarm"></use></svg>
+                            Tomorrow
+                            </small>
+                        </span>
+                        </label>
+                    <label class="list-group-item d-flex gap-3 bg-light">
+                    <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0 pe-none" disabled="" type="checkbox" value="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                        <span contenteditable="true" class="w-100">Add new task...</span>
+                        <small class="d-block text-muted">
+                        <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#list-check"></use></svg>
+                        Choose list...
+                        </small>
+                    </span>
+                    </label>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Task 2</h1>
-                    <p style="margin-top: 12px">Time Remaining: ##:##</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Task 3</h1>
-                    <p style="margin-top: 12px">Time Remaining: ##:##</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Task 4</h1>
-                    <p style="margin-top: 12px">Time Remaining: ##:##</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Task 5</h1>
-                    <p style="margin-top: 12px">Time Remaining: ##:##</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Task 6</h1>
-                    <p style="margin-top: 12px">Time Remaining: ##:##</p>
-                </div>
-            </div>
-        </div>
+        </div> 
 
         <!--Footer-->
         <footer id="footerplaceholder"></footer>

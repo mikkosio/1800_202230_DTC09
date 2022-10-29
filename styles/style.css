@@ -70,6 +70,12 @@ h3 {
     margin-top: 200px;
 }
 
+.rounded-3 {
+    border-radius: var(--bs-border-radius-lg)0.5;
+    width:50%;
+    margin: auto;
+}
+
 @media screen and (max-width: 650px) {
     h3 {
         width: 100%;
@@ -80,5 +86,18 @@ h3 {
 
     .container {
         text-align: auto;
+    }
+
+    .rounded-3 {
+        clear: both;
+        width: 100%;
+    }
+
+    .display-4 {
+        font-size: 25px;
+    }
+
+    .time {
+        font-size: 12px;
     }
 }
