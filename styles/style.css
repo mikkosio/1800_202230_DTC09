@@ -87,4 +87,12 @@ h3 {
     .container {
         text-align: auto;
     }
+
+    .rounded-3 {
+        clear: both;
+    }
+
+    .rounded-3 p {
+        text-align: center;
+    }
 }
