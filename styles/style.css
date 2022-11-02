@@ -62,8 +62,8 @@ h3 {
 }
 
 #monmon {
-    display: flex;
-    justify-content: center;
+    width: 25%;
+    margin:auto;
 }
 
 .bottomicons {
@@ -74,6 +74,12 @@ h3 {
     border-radius: var(--bs-border-radius-lg)0.5;
     width:50%;
     margin: auto;
+}
+
+.progress {
+    width:50%; 
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 @media screen and (max-width: 650px) {
