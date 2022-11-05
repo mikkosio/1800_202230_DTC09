@@ -81,6 +81,13 @@ h3 {
     margin: auto;
     margin-bottom: 50px;
 }
+#hero-carousel button{
+    background-color: gray
+}
+
+#hero-carousel button:hover {
+    background-color: black;
+}
 
 @media screen and (max-width: 650px) {
     h3 {
@@ -88,6 +95,7 @@ h3 {
         float: left;
         text-align: center;
         margin-right: 200px;
+        display: block;
     }
 
     .container {
@@ -118,4 +126,17 @@ h3 {
 
     #monmonname {
         text-align: center;
+    }
+
+    .carousel-control-prev {
+        display: none;
+    }
+
+    .carousel-control-next{
+        display: none;
+    }
+
+    #hero-carousel {
+        margin-top: 120px;
+        margin-bottom: 15px;
     }
