@@ -9,8 +9,13 @@ var uiConfig = {
                     email: user.email,
                     country: "Canada",
                     tasks_completed: 0,
-                }).then(function () {
+                }).then(function () {  
+                    var defaultTasks = db.collection("users").doc(user.uid).collection('tasks').doc("defaultTaskList").set({
+                        itemOne: "Calvin",
+                    })
+
                     console.log("New user added to firestore");
+                    console.log("Default task list created")
                     window.location.assign("main.html");
                 })
                     .catch(function (error) {
@@ -45,3 +50,5 @@ var uiConfig = {
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 ui.start('#firebaseui-auth-container', uiConfig);
+
+console.log(user.uid)
