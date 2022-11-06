@@ -9,6 +9,7 @@ var uiConfig = {
                     email: user.email,
                     country: "Canada",
                     tasks_completed: 0,
+                    monmon: db.doc('monmons/eggy'),
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");
