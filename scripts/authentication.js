@@ -9,7 +9,7 @@ var uiConfig = {
                     email: user.email,
                     country: "Canada",
                     tasks_completed: 0,
-                    monmon: db.doc('monmons/eggy'),
+                    monmon: "Eggy",
                 }).then(function () {
                     var defaultTasks = db.collection("users").doc(user.uid).collection('tasks').doc("defaultTaskList").set({
                         itemOne: "Calvin",
