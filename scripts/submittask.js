@@ -1,8 +1,5 @@
 
 
-
-document.getElementById('taskForm').addEventListener('submit', submitTask);
-
 function submitTask() {
 
     var tasktitle = getInputValue('tasktitle');
@@ -13,7 +10,7 @@ function submitTask() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             // User logged in already or has just logged in.
-            var task = db.collection("users").doc(user.uid).collection('tasks').doc("task1").add({
+            var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
                 TaskTitle: tasktitle,
                 TaskDescription: taskdescription,
                 DateDeadline: datedeadline,
@@ -24,16 +21,14 @@ function submitTask() {
             // User not logged in or has just logged out.
         }
     });
+
+    document.querySelector('#alert').style.display = "block";
+
+    setTimeout(function () {
+        location.reload();
+    }, 1500);
 }
 
 function getInputValue(id) {
     return document.getElementById(id).value;
 }
-
-function setup() {
-    $('#submit').click(submitTask)
-}
-
-
-
-$(document).ready(setup)

@@ -33,6 +33,16 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        #alert {
+            text-align: center;
+            padding: 10px;
+            background-color: #79c879;
+            color: #fff;
+            margin: 10px;
+            display: none;
+        }
+    </style>
 
 </head>
 
@@ -43,6 +53,8 @@
     <!------------------------------>
     <!--Nav Bar-->
     <nav id="navbarplaceholder"></nav>
+
+    <div id="alert">New Task Successfully Added!</div>
 
     <div id="taskForm">
         <div id="task">
@@ -169,8 +181,9 @@
         </div>
 
 
-        <a id="submit" class="btn btn-primary" href="#" role="button" style="margin-left: 12px; margin-top: 30px;">Add
-            Task</a>
+        <button id="submit" class="btn btn-primary" onclick="submitTask()" role="button"
+            style="margin-left: 12px; margin-top: 30px;">Add
+            Task</button>
 
     </div>
 
@@ -182,7 +195,7 @@
 
     <!-- Link to scripts of your own -->
 
-    <script type="module" src="./scripts/submittask.js"></script>
+    <script src="./scripts/submittask.js"></script>
     <script src="./scripts/dateandtime.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
