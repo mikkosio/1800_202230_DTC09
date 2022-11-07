@@ -62,8 +62,12 @@ h3 {
 }
 
 #monmon {
-    width: 25%;
-    margin:auto;
+    display: flex;
+    justify-content: center;
+}
+
+#monmon #monmonimage {
+    width: 200px;
 }
 
 .bottomicons {
@@ -147,15 +151,10 @@ img {
         font-size: 12px;
     }
     #monmon {
-        width: 90%;
         display: flex;
         justify-content: center;
     }
-
-    #monmon img {
-        width: 60%;
-    }
-
+    
     #monmonname {
         text-align: center;
     }
