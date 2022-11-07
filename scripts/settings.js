@@ -6,38 +6,39 @@ function changeName() {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here: 
+            if (newFirstName == "") {
+                newFirstName = user.displayName.split(' ')[0]
+            }
+
+            if (newLastName == "") {
+                newLastName = user.displayName.split(' ')[1]
+            }
             
             user.updateProfile({
                 displayName: `${newFirstName} ${newLastName}`,
-              }).then(() => {
-    
-              }).catch((error) => {
+            }).then(() => {
+            }).catch((error) => {
                 // An error occurred
                 // ...
-              });  
-
-              alert("Settings successfully saved!")
-              
-            db.collection("users").doc(user.uid).update({
-                name: user.displayName,
-            })
-
-
+            });
+            alert("Settings successfully saved!")
         } else {
             // No user is signed in.
         }
     });
 }
 
-function setup() {
-    $("#submitChanges").click(changeName)
-}
-
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            // Do something for the currently logged-in user here: 
+            // Do something for the currently logged-in user here:
+
+            db.collection("users").doc(user.uid).update({
+                name: user.displayName,
+                email: user.email,
+            })
+
             console.log(user.uid);
             console.log(user.displayName);
             user_Name = user.displayName;
@@ -56,5 +57,10 @@ function insertName() {
         }
     });
 }
+
+function setup() {
+    $("#submitChanges").click(changeName)
+}
+
 insertName(); //run the function
 $(document).ready(setup)
