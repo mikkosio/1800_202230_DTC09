@@ -76,16 +76,17 @@ h3 {
 
 .rounded-3 {
     border-radius: var(--bs-border-radius-lg)0.5;
-    width:50%;
+    width: 50%;
     margin: auto;
 }
 
 .progress {
-    width:50%; 
+    width: 50%;
     margin: auto;
     margin-bottom: 50px;
 }
-#hero-carousel button{
+
+#hero-carousel button {
     background-color: gray
 }
 
@@ -96,19 +97,24 @@ h3 {
 .avatar-xl img {
     width: 110px;
 }
+
 .rounded-circle {
     border-radius: 50% !important;
 }
+
 img {
     vertical-align: middle;
     border-style: none;
 }
+
 .text-muted {
     color: #aeb0b4 !important;
 }
+
 .text-muted {
     font-weight: 300;
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -150,11 +156,12 @@ img {
     .time {
         font-size: 12px;
     }
+
     #monmon {
         display: flex;
         justify-content: center;
     }
-    
+
     #monmonname {
         text-align: center;
     }
@@ -163,7 +170,7 @@ img {
         display: none;
     }
 
-    .carousel-control-next{
+    .carousel-control-next {
         display: none;
     }
 
@@ -171,3 +178,4 @@ img {
         margin-top: 120px;
         margin-bottom: 15px;
     }
+}
