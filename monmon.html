@@ -1,116 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Inter-Task-Tivity</title>
-  <meta name="comp1800 template" content="My 1800 App">
+    <head>
+        <title>Inter-Task-Tivity</title>
+        <meta name="comp1800 template" content="My 1800 App">
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!------------------------------------------>
-  <!-- Bootstrap Library CSS JS CDN go here -->
-  <!------------------------------------------>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+        <!------------------------------------------>
+        <!-- Bootstrap Library CSS JS CDN go here -->
+        <!------------------------------------------>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-  <!-------------------------------------------------------->
-  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-  <!-------------------------------------------------------->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+        <!-------------------------------------------------------->
+        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+        <!-------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet"
+            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <!-------------------------------------------->
-  <!-- Other libraries and styles of your own -->
-  <!-------------------------------------------->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
+        <!-------------------------------------------->
+        <!-- Other libraries and styles of your own -->
+        <!-------------------------------------------->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
 
-<body>
+    <body>
 
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
-  <!--Nav Bar-->
+        <!------------------------------>
+        <!-- Your HTML Layout go here -->
+        <!------------------------------>
+        <!--Nav Bar-->
 
-  <nav id="navbarplaceholder" style="margin-bottom: 35px"></nav>
+        <nav id="navbarplaceholder" style="margin-bottom: 35px"></nav>
 
-  <h2 style="margin-left: 25px;"><span id="room-name"></span>'s Room</h2>
+        <h2 style="margin-left: 25px;"><span id="room-name"></span>'s Room</h2>
 
-  <div id="imagecontainer">
-    <div id="monmon">
-      <img id="monmonimage" src="">
-    </div>
-    <p style="margin-left: 25px; margin-bottom: 35px; text-align: center;"><span id="creature-name"></span><span
-        id="hatch_status"></span>
-    </p>
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar"
-        aria-valuenow="75" aria-valuemin="50" aria-valuemax="100">
-      </div>
-    </div>
-    <span id="number_of_tasks" style="align-items:center"></span>
-  </div>
-
-  <h6 class="bg-light p-2 border-top border-bottom">Tasks/Quests of the Day</h6>
-
-  <ul class="list-group list-group-light">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 1</p>
-          <p class="text-muted mb-0">Link this to first card</p>
+        <div id="imagecontainer">
+            <div id="monmon">
+                <img id="monmonimage" src="">
+            </div>
+            <p style="margin-left: 25px; margin-bottom: 35px; text-align: center;"><span id="creature-name"></span><span
+                    id="hatch_status"></span>
+            </p>
+            <span id="number_of_tasks" style="align-items:center"></span>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar"
+                    aria-valuenow="75" aria-valuemin="50" aria-valuemax="100">
+                </div>
+            </div>
         </div>
-      </div>
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
 
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 2</p>
-          <p class="text-muted mb-0">Link these to second card</p>
-        </div>
-      </div>
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
+        <h6 class="bg-light p-2 border-top border-bottom">Tasks/Quests of the Day</h6>
 
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 3</p>
-          <p class="text-muted mb-0">Link this to third Card</p>
-        </div>
-      </div>
+        <ul class="list-group list-group-light">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Task 1</p>
+                        <p class="text-muted mb-0">Link this to first card</p>
+                    </div>
+                </div>
+                <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
 
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-  </ul>
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Task 2</p>
+                        <p class="text-muted mb-0">Link these to second card</p>
+                    </div>
+                </div>
+                <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Task 3</p>
+                        <p class="text-muted mb-0">Link this to third Card</p>
+                    </div>
+                </div>
+
+                <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
+            </li>
+        </ul>
 
 
 
 
-  <!--Footer-->
-  <footer id="footerplaceholder"></footer>
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
+        <!--Footer-->
+        <footer id="footerplaceholder"></footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
 
-  <!-- Link to scripts of your own -->
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-  <script src="./scripts/monmon.js"></script>
-  <script src="./scripts/main.js"></script>
-</body>
+        <!-- Link to scripts of your own -->
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/skeleton.js"></script>
+        <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+        <script src="./scripts/monmon.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
 
 </html>
