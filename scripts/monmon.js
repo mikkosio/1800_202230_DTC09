@@ -23,7 +23,8 @@ function updateTasks() {
         if (user) {
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {                                                               //arrow notation                 //.data() returns data object
-                    document.getElementById("number_of_tasks").innerHTML = userDoc.data().tasks_completed
+                    document.getElementById("number_of_tasks").innerHTML = userDoc.data().tasks_completed + "/10 Tasks Complete";
+                    document.getElementById("progressBar").style.width = `${(userDoc.data().tasks_completed) * 10}%`;
                 })
         }
         else {
