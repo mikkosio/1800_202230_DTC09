@@ -1,3 +1,5 @@
+var currentUser
+
 function changeName() {
     newFirstName = $("#firstname").val()
     newLastName = $("#lastname").val()
@@ -28,29 +30,46 @@ function changeName() {
     });
 }
 
-function insertName() {
+function editUserSettings() {
+    document.getElementById('personalInfoFields').disabled = false;
+}
+
+function populateSettings() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            // Do something for the currently logged-in user here:
-
-            db.collection("users").doc(user.uid).update({
-                name: user.displayName,
-                email: user.email,
-            })
 
             console.log(user.uid);
             console.log(user.displayName);
-            user_Name = user.displayName;
+    
+            currentUser = db.collection("users").doc(user.uid);
+            
+            currentUser.get()
+                .then(userDoc => {
+                    var firstName = userDoc.data().name.split(' ')[0]
+                    var lastName = userDoc.data().name.split(' ')[1]
 
-            console.log(user.email);
-            user_Email = user.email;
+                    if (firstName != null) {
+                        document.getElementById("firstname").value = firstName;
+                    }
+                    if (lastName != null) {
+                        document.getElementById("lastname").value = lastName;
 
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
-            $(".name-goes-here").text(user_Name); //using jquery
-            $(".email-goes-here").text(user_Email); //using jquery
+                    user.updateProfile({
+                        displayName: `${firstName} ${lastName}`,
+                    }).then(() => {
+                        console.log("Display name updated.")
+                    }).catch((error) => {
+                        console.log("Could not update display name.")
+                    });
+
+                    $(".name-goes-here").text(user.displayName); //using jquery
+                    $(".email-goes-here").text(user_Email); //using jquery
+
+                    }                    
+                })
+
+              
 
         } else {
             // No user is signed in.
@@ -58,9 +77,18 @@ function insertName() {
     });
 }
 
-function setup() {
-    $("#submitChanges").click(changeName)
+function saveUserInfo() {
+    firstName = document.getElementById("firstname").value
+    lastName = document.getElementById("lastname").value
+
+    currentUser.update({
+        name: `${firstName} ${lastName}`,
+    })
+    .then(() => {
+        console.log("Document successfully updated.")
+        document.getElementById('personalInfoFields').disabled = true;
+    })
+    alert("Changes succesfully saved")
 }
 
-insertName(); //run the function
-$(document).ready(setup)
+populateSettings()
