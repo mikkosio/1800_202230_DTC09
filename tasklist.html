@@ -33,6 +33,12 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,61 +52,19 @@
 
     <!--Task Reminder Cards-->
 
-    <h2 id="listname" style="margin: 50px auto;">My Tasks</h2>
+    <div class="container">
+        <h2 id="listname" style="margin: 50px auto;">My Tasks</h2>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="hikeCardGroup" class="row row-cols-auto">
+            </div>
+        </div>
+    </div>
 
     <div class="container2" style="display: flex; justify-content: center; margin-top: 50px;">
         <div class="center" style="width: 75%">
-            <div class="list-group w-auto">
-                <label class="list-group-item d-flex gap-3">
-                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked=""
-                        style="font-size: 1.375em;">
-                    <span class="pt-1 form-checked-content">
-                        <strong>Finish sales report</strong>
-                        <small class="d-block text-muted">
-                            <svg class="bi me-1" width="1em" height="1em">
-                                <use xlink:href="#calendar-event"></use>
-                            </svg>
-                            1:00–2:00pm
-                        </small>
-                    </span>
-                </label>
-                <label class="list-group-item d-flex gap-3">
-                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked=""
-                        style="font-size: 1.375em;">
-                    <span class="pt-1 form-checked-content">
-                        <strong>Weekly All Hands</strong>
-                        <small class="d-block text-muted">
-                            <svg class="bi me-1" width="1em" height="1em">
-                                <use xlink:href="#calendar-event"></use>
-                            </svg>
-                            2:00–2:30pm
-                        </small>
-                    </span>
-                </label>
-                <label class="list-group-item d-flex gap-3">
-                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
-                    <span class="pt-1 form-checked-content">
-                        <strong>Out of office</strong>
-                        <small class="d-block text-muted">
-                            <svg class="bi me-1" width="1em" height="1em">
-                                <use xlink:href="#alarm"></use>
-                            </svg>
-                            Tomorrow
-                        </small>
-                    </span>
-                </label>
-                <label class="list-group-item d-flex gap-3">
-                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
-                    <span class="pt-1 form-checked-content">
-                        <strong>Complete 1800</strong>
-                        <small class="d-block text-muted">
-                            <svg class="bi me-1" width="1em" height="1em">
-                                <use xlink:href="#alarm"></use>
-                            </svg>
-                            Tomorrow
-                        </small>
-                    </span>
-                </label>
+            <div id="taskList" class="list-group w-auto">
+
                 <label class="list-group-item d-flex gap-3 bg-light">
                     <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0 pe-none"
                         disabled="" type="checkbox" value="" style="font-size: 1.375em;">
@@ -114,9 +78,26 @@
                         </small>
                     </span>
                 </label>
+
             </div>
         </div>
     </div>
+
+    <template id="taskItemTemplate">
+        <label class="list-group-item d-flex gap-3">
+            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+            <span class="pt-1 form-checked-content">
+                <p><strong class="task-title">tasktitle</strong></p>
+                <p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
+                    labore.</p>
+                <div><small><b style="float: left;">Due:&nbsp;</b>
+                        <p style="float: left;" class="date-deadline">November 13, 2022</p>
+                        <p class="time-deadline">22:03</p>
+                    </small></div>
+            </span>
+        </label>
+    </template>
 
     <!--Footer-->
     <footer id="footerplaceholder"></footer>
@@ -125,12 +106,12 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
+
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/main.js"></script>
-    <script src="./scripts/navbar.js"></script>
-    <script src="./scripts/tasklist.js"></script>
+    <script src="./scripts/populatetask.js"></script>
+    <!-- <script src="./scripts/main.js"></script> -->
 </body>
 
 </html>
