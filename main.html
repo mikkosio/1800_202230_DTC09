@@ -62,17 +62,16 @@
         </div>
 
         <div class="carousel-inner">
-            <div class="carousel-item active c-item">
+            <div id = "slide1" class="carousel-item active c-item">
                 <div class="p-3 mb-3 bg-light rounded-3" alt="Slide 1">
                     <div class="container-fluid py-5">
-                        <h1 class="display-4 fw-bold">Enter Task Here</h1>
-                        <p class="time">#Date/Time Remaining</p>
+                        <h1 class="display-4 fw-bold"><span id = "task1"></span></h1>
+                        <p class="time"><span id = "date1"></span></p>
                     </div>
                 </div>
                 <div class="carousel-caption top-0 mt-4">
                 </div>
             </div>
-
             <div class="carousel-item c-item">
                 <div class="p-3 mb-3 bg-light rounded-3" alt="Slide 2">
                     <div class="container-fluid py-5">
@@ -94,6 +93,7 @@
                 </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
