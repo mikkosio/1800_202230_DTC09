@@ -24,7 +24,7 @@ function updateTasks() {
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {                                                               //arrow notation                 //.data() returns data object
                     document.getElementById("number_of_tasks").innerHTML = userDoc.data().tasks_completed + "/10 Tasks Complete";
-                    document.getElementById("progressBar").style.width = `${(userDoc.data().tasks_completed) * 10}%`;
+                    //document.getElementById("progressBar").style.width = `${(userDoc.data().tasks_completed) * 10}%`;
                 })
         }
         else {
@@ -62,3 +62,47 @@ function updateMonmon() {
 
 }
 updateMonmon();
+
+function populateTasks() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            // Do something for the currently logged-in user here: 
+            let monmonTaskTemplate = document.getElementById("monmonTaskTemplate"); 
+            let monmonTaskContainer = document.getElementById("monmonTaskContainer")
+            
+            
+            let date = new Date();
+            let taskCounter = 1;
+
+            localStorage.setItem("useruid", user.uid)
+
+            db.collection("users").doc(user.uid).collection("tasks").get()
+                .then(userTask => {
+                    userTask.forEach(userDoc => {
+                        if (taskCounter <= 3) {
+                            if(userDoc.data().DateDeadline == "November 12, 2022"){
+                                let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
+                                
+                                monmonTaskCard.querySelector(".task").innerHTML = userDoc.data().TaskTitle
+                                monmonTaskCard.querySelector(".date").innerHTML = userDoc.data().DateDeadline
+
+                                monmonTaskContainer.appendChild(monmonTaskCard)
+
+                                taskCounter += 1
+                            }
+                        }
+                    })
+            })
+
+ 
+            //method #1:  insert with html only
+            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
+            //method #2:  insert using jquery
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+
+populateTasks()
