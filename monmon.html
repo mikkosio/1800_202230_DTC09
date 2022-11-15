@@ -61,40 +61,25 @@
 
   </div>
 
-  <h6 class="bg-light p-2 border-top border-bottom">Tasks/Quests of the Day</h6>
+  <h6 class="bg-light p-2 border-top border-bottom" style = "margin-bottom: 3px;">Tasks/Quests of the Day</h6>
 
-  <ul class="list-group list-group-light">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 1</p>
-          <p class="text-muted mb-0">Link this to first card</p>
-        </div>
-      </div>
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
+  <template id = "monmonTaskTemplate">
+      <ul class="list-group list-group-light" style = "margin-bottom: 3px;">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <div class="ms-3">
+              <p class="fw-bold mb-1"><span class = task>placeholder</span></p>
+              <p class="text-muted mb-0"><span class = date>placeholder</span></p>
+            </div>
+          </div>
+          <a class="btn btn-link btn-rounded btn-sm" href="./tasklist.html" role="button">View</a>
+        </li>
+      </ul>
+</template>
 
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 2</p>
-          <p class="text-muted mb-0">Link these to second card</p>
-        </div>
-      </div>
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
+<div id = "monmonTaskContainer">
 
-        <div class="ms-3">
-          <p class="fw-bold mb-1">Task 3</p>
-          <p class="text-muted mb-0">Link this to third Card</p>
-        </div>
-      </div>
-
-      <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">View</a>
-    </li>
-  </ul>
+</div>
 
 
 
