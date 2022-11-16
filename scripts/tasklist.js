@@ -22,7 +22,6 @@ function editFirestoreTask() {
     })
 };
 
-
 function deleteTask() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -37,3 +36,27 @@ function deleteTask() {
     });
 };
 deleteTask();
+
+function populateTasks() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            db.collection("users").doc(user.uid).collection("tasks").get()
+                .then(task => {
+                    task.forEach(userDoc => {
+                        let datedeadline = (userDoc.data().DateDeadline).split("-")
+                        console.log(datedeadline)
+                        
+
+                    })
+                })
+        }
+
+        else {
+            // No user is signed in.
+        };
+    })
+
+}
+
+populateTasks()
