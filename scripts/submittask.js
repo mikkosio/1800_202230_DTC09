@@ -1,55 +1,12 @@
-
-
 function submitTask() {
-
     var tasktitle = getInputValue('tasktitle');
     var taskdescription = getInputValue('taskdescription');
 
-    var datedeadlinetemp = getInputValue('endDate');
-    var month = datedeadlinetemp.slice(5, 7);
-    var day = datedeadlinetemp.slice(8, 10);
-    var year = datedeadlinetemp.slice(0, 4);
+    var datedeadline = getInputValue('endDate').split('-')
+ 
+    let date = new Date(datedeadline[0], datedeadline[1] - 1 , datedeadline[2], Number(getInputValue("hour")), Number(getInputValue("minute")));
 
-    if (month == '01') {
-        month = 'January'
-    } else if (month == '02') {
-        month = 'February'
-    }
-    else if (month == '03') {
-        month = 'March'
-    }
-    else if (month == '04') {
-        month = 'April'
-    }
-    else if (month == '05') {
-        month = 'May'
-    }
-    else if (month == '06') {
-        month = 'June'
-    }
-    else if (month == '07') {
-        month = 'July'
-    }
-    else if (month == '08') {
-        month = 'August'
-    }
-    else if (month == '09') {
-        month = 'September'
-    }
-    else if (month == '10') {
-        month = 'October'
-    }
-    else if (month == '11') {
-        month = 'November'
-    }
-    else if (month == '12') {
-        month = 'December'
-    }
-
-    var datedeadline = month + " " + day + ", " + year
-
-
-    var timedeadline = String(getInputValue('hour')) + ":" + String(getInputValue('minute'));
+    let timeRemaining = calculateDate(date)
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -57,8 +14,8 @@ function submitTask() {
             var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
                 TaskTitle: tasktitle,
                 TaskDescription: taskdescription,
-                DateDeadline: datedeadline,
-                TimeDeadline: timedeadline
+                DateDeadline: date,
+                RemainingTime: timeRemaining
             });
 
         } else {
@@ -67,12 +24,30 @@ function submitTask() {
     });
 
     document.querySelector('#alert').style.display = "block";
-
-    setTimeout(function () {
-        location.reload();
-    }, 1500);
 }
 
 function getInputValue(id) {
     return document.getElementById(id).value;
 }
+
+
+function calculateDate(date){
+    let today = new Date(Date.now())
+
+    let difference = date - today
+ 
+    let days = Math.floor(difference / (84640 * 1000));
+    difference -= days * (86400 * 1000); 
+
+    let hours = Math.floor(difference / (60 * 60 * 1000))
+    difference -= hours * (60 * 60 * 1000)
+
+    let minutes = Math.floor(difference / (60 * 1000));
+    difference -= minutes * (60 * 1000)
+
+    let seconds = Math.floor(difference / 1000)
+
+    return (`${days}d:${hours}h:${minutes}min:${seconds}s`)
+}
+
+calculateDate()
