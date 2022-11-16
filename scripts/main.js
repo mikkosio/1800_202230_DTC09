@@ -24,7 +24,6 @@ function populuateMainpage () {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here: 
-            let date = new Date();
             let taskCounter = 1;
 
             localStorage.setItem("useruid", user.uid)
@@ -33,8 +32,7 @@ function populuateMainpage () {
                 .then(userTask => {
                     userTask.forEach(userDoc => {
                         if (taskCounter <= 3) {
-                            if(userDoc.data().DateDeadline == "November 12, 2022"){
-                                console.log(userDoc.data().TaskTitle)
+                            if(userDoc.data()){
                                 $(`#task${taskCounter}`).text(userDoc.data().TaskTitle)
                                 $(`#date${taskCounter}`).text(userDoc.data().DateDeadline)
                                 taskCounter += 1
@@ -42,8 +40,6 @@ function populuateMainpage () {
                         }
                     })
             })
-
-   
             //method #1:  insert with html only
             //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
             //method #2:  insert using jquery
