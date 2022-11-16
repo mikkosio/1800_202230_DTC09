@@ -71,7 +71,6 @@ function populateTasks() {
             let monmonTaskTemplate = document.getElementById("monmonTaskTemplate"); 
             let monmonTaskContainer = document.getElementById("monmonTaskContainer")
             
-            
             let date = new Date();
             let taskCounter = 1;
 
@@ -81,7 +80,7 @@ function populateTasks() {
                 .then(userTask => {
                     userTask.forEach(userDoc => {
                         if (taskCounter <= 3) {
-                            if(userDoc.data().DateDeadline == "November 12, 2022"){
+                            if(userDoc.data()){
                                 let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
                                 
                                 monmonTaskCard.querySelector(".task").innerHTML = userDoc.data().TaskTitle
