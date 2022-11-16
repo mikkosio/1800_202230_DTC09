@@ -7,10 +7,17 @@ function populateCardsDynamically() {
             db.collection("users").doc(user.uid).collection("tasks").get()
                 .then(allTasks => {
                     allTasks.forEach(doc => {
+                        let datedeadlineTemp = userDoc.data().DateDeadline
+                        let array = datedeadlineTemp.split('-')
+
                         var taskTitle = doc.data().TaskTitle; //gets the task title field
                         var taskDescription = doc.data().TaskDescription; //gets the task description field
-                        var dateDeadline = doc.data().DateDeadline; //gets the date deadline field
+                        var dateDeadline = calculateDate(new Date(array[0], array[1], array[2], array[3], array[4])); //gets the date deadline field
                         var remainingTime = doc.data().RemainingTime; // gets the time deadline field
+
+                     
+                        let dateDeadlineInMs = 
+
                         let testTaskList = taskItemTemplate.content.cloneNode(true);
                         testTaskList.querySelector('.task-title').innerHTML = taskTitle;     //equiv getElementByClassName
                         testTaskList.querySelector('.task-description').innerHTML = taskDescription;  //equiv getElementByClassName
