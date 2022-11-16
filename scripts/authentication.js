@@ -11,10 +11,10 @@ var uiConfig = {
                     tasks_completed: 0,
                     monmon: "Eggy",
                 }).then(function () {
-                    var defaultTasks = db.collection("users").doc(user.uid).collection('tasks').doc("defaultTaskList").set({
-                        itemOne: "Calvin",
-                    })
-
+                    //Dont need this for now. Used to create a default task list collection
+                    //var defaultTasks = db.collection("users").doc(user.uid).collection('tasks').doc("defaultTaskList").set({
+                        //itemOne: "Calvin",
+                    //})
                     console.log("New user added to firestore");
                     console.log("Default task list created")
                     window.location.assign("main.html");
