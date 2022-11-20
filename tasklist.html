@@ -42,6 +42,20 @@
         label {
             cursor: pointer;
         }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -68,19 +82,9 @@
     <div class="container2" style="display: flex; justify-content: center; margin-top: 50px;">
         <div class="center" style="width: 75%">
             <div id="taskList" class="list-group w-auto">
-                <label class="list-group-item d-flex gap-3 bg-light">
-                    <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0 pe-none"
-                        disabled="" type="checkbox" value="" style="font-size: 1.375em;">
-                    <span class="pt-1 form-checked-content">
-                        <span contenteditable="true" class="w-100">Add new task...</span>
-                        <small class="d-block text-muted">
-                            <svg class="bi me-1" width="1em" height="1em">
-                                <use xlink:href="#list-check"></use>
-                            </svg>
-                            Choose list...
-                        </small>
-                    </span>
-                </label>
+                <button type="button" class="btn btn-outline-dark" style="width: 15%"><a href="/taskaddition.html">Add
+                        New Task</a></button>
+
 
             </div>
         </div>
