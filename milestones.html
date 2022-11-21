@@ -64,17 +64,45 @@
 
     <h2>MILESTONES</h2>
 
-    <div>
-        <ul class="milestones">
-            <li class="list-group-item list-group-item-success">milestone 1</li>
-            <li class="list-group-item list-group-item-success">milestone 2</li>
-            <li class="list-group-item list-group-item-success">milestone 3</li>
-            <li class="list-group-item list-group-item-success">milestone 4</li>
-            <li class="list-group-item list-group-item-success">milestone 5</li>
-        </ul>
-
-        <h4 id="taskscompleted">Number of Tasks Completed: #</h4>
-    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'taskMilestone')">Tasks Completed</button>
+        <button class="tablinks" onclick="openCity(event, 'loginMilestone')">Days Logged In</button>
+        <button class="tablinks" onclick="openCity(event, 'monmonMilestones')">Mon Mon Goals</button>
+      </div>
+      
+      <!-- Tab content -->
+      <div id="taskMilestone" class="tabcontent">
+        <div id = milestone>
+            <h3>Complete 10 Tasks</h3>
+            <p>Tasks Completed / 10</p>
+            
+            <h3>Complete 25 Tasks</h3>
+            <p>Tasks Completed / 25</p>
+    
+            <h3>Complete 50 Tasks</h3>
+            <p>Tasks Completed / 25</p>
+        </div>
+      </div>
+      
+      <div id="loginMilestone" class="tabcontent">
+        <div id = milestone>
+            <h3>First login!</h3>
+            <p>1 Day / 1 day</p>
+            
+            <h3>Login 10 days</h3>
+            <p># of Days / 10 days</p>
+    
+            <h3>Login 50 days</h3>
+            <p># of days logged in / 50</p>
+        </div>
+      </div>
+      
+      <div id="monmonMilestones" class="tabcontent">
+        <div id = milestone>
+            <h3>Successfully hatched new mon mon!</h3>
+            <p>A new friend awaits you!</p>
+        </div>
+      </div>
 
     <!--Footer-->
     <footer id="footerplaceholder"></footer>
@@ -87,6 +115,8 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAM09.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/milestone.js"></script>
+
 </body>
 
 </html>
