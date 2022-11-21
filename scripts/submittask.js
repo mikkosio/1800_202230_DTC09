@@ -15,8 +15,9 @@ function submitTask() {
             var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
                 TaskTitle: tasktitle,
                 TaskDescription: taskdescription,
-                DateDeadline: dateDeadlineFireBase,
-                RemainingTime: timeRemaining
+                FullDeadline: dateDeadlineFireBase,
+                DisplayDeadline: dateDeadlineDisplay,
+                RemainingTime: timeRemainingInMs
             }).then(() => {
                 window.location.href = "taskadded.html";
             })
