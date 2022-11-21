@@ -19,6 +19,7 @@ function insertName() {
     });
 }
 
+
 function populuateMainpage () {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -28,18 +29,19 @@ function populuateMainpage () {
 
             localStorage.setItem("useruid", user.uid)
 
-            db.collection("users").doc(user.uid).collection("tasks").get()
-                .then(userTask => {
-                    userTask.forEach(userDoc => {
-                        if (taskCounter <= 3) {
-                            if(userDoc.data()){
-                                $(`#task${taskCounter}`).text(userDoc.data().TaskTitle)
-                                $(`#date${taskCounter}`).text(userDoc.data().DateDeadline)
-                                taskCounter += 1
-                            }
-                        }
+            db.collection("users").doc(user.uid).collection("tasks")
+                .orderBy('RemainingTime')
+                .limit(3)
+                .get()
+                .then(userDoc => {
+                    userDoc.forEach(task => {
+                        $(`#task${taskCounter}`).text(task.data().TaskTitle)
+                        $(`#date${taskCounter}`).text(task.data().DisplayDeadline)
+                        taskCounter += 1
                     })
-            })
+                })
+
+        
             //method #1:  insert with html only
             //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
             //method #2:  insert using jquery
