@@ -84,7 +84,7 @@ function populateTasks() {
                                 let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
                                 
                                 monmonTaskCard.querySelector(".task").innerHTML = userDoc.data().TaskTitle
-                                monmonTaskCard.querySelector(".date").innerHTML = userDoc.data().DateDeadline
+                                monmonTaskCard.querySelector(".date").innerHTML = userDoc.data().DisplayDeadline
 
                                 monmonTaskContainer.appendChild(monmonTaskCard)
 
