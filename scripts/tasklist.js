@@ -1,3 +1,5 @@
+const label = document.getElementsByName("label");
+
 function bootstrapDelete() {
     $(this).parent().remove();
 };
@@ -26,16 +28,25 @@ function deleteTask() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            // Do something for the currently logged-in user here: 
+            // Do something for the currently logged-in user here:
             $("body").on("click", "label", editFirestoreTask);
             $("body").on("click", "label", bootstrapDelete);
-
         } else {
             // No user is signed in.
         }
     });
 };
-deleteTask();
+
+$("body").on("click", "label", function confirmDelete() {
+    if (confirm("Mark task complete?")) {
+        deleteTask();
+        txt = "Task completed!"
+    }
+    else {
+        txt = "Cancelled."
+    }
+});
+
 
 function populateTasks() {
     firebase.auth().onAuthStateChanged(user => {
@@ -46,7 +57,7 @@ function populateTasks() {
                     task.forEach(userDoc => {
                         let datedeadline = (userDoc.data().DateDeadline).split("-")
                         console.log(datedeadline)
-                        
+
 
                     })
                 })
