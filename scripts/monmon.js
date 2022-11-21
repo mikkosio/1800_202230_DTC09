@@ -76,25 +76,20 @@ function populateTasks() {
 
             localStorage.setItem("useruid", user.uid)
 
-            db.collection("users").doc(user.uid).collection("tasks").get()
-                .then(userTask => {
-                    userTask.forEach(userDoc => {
-                        if (taskCounter <= 3) {
-                            if(userDoc.data()){
-                                let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
+            db.collection("users").doc(user.uid).collection("tasks")
+                .orderBy("RemainingTime")
+                .limit(3)
+                .get()
+                .then(userDoc => {
+                    userDoc.forEach(task => {
+                        let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
                                 
-                                monmonTaskCard.querySelector(".task").innerHTML = userDoc.data().TaskTitle
-                                monmonTaskCard.querySelector(".date").innerHTML = userDoc.data().DisplayDeadline
-
-                                monmonTaskContainer.appendChild(monmonTaskCard)
-
-                                taskCounter += 1
-                            }
-                        }
+                        monmonTaskCard.querySelector(".task").innerHTML = task.data().TaskTitle
+                        monmonTaskCard.querySelector(".date").innerHTML = task.data().DisplayDeadline
+                        monmonTaskContainer.appendChild(monmonTaskCard)
                     })
-            })
+                })
 
- 
             //method #1:  insert with html only
             //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
             //method #2:  insert using jquery
