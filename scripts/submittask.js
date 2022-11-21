@@ -5,8 +5,9 @@ function submitTask() {
     var datedeadline = getInputValue('endDate').split('-')
 
     let dateDeadlineFireBase = `${datedeadline[0]}-${datedeadline[1]-1}-${datedeadline[2]}-${getInputValue("hour")}-${getInputValue("minute")}`
+    let dateDeadlineDisplay = `${datedeadline[0]}-${datedeadline[1]-1}-${datedeadline[2]}`
 
-    let timeRemaining = calculateDate(new Date(datedeadline[0], datedeadline[1] - 1, datedeadline[2], getInputValue("hour"), getInputValue("minute")))
+    let timeRemainingInMs = new Date(datedeadline[0], datedeadline[1] - 1, datedeadline[2], getInputValue("hour"), getInputValue("minute")) - new Date(Date.now())
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -14,8 +15,9 @@ function submitTask() {
             var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
                 TaskTitle: tasktitle,
                 TaskDescription: taskdescription,
-                DateDeadline: dateDeadlineFireBase,
-                RemainingTime: timeRemaining
+                FullDeadline: dateDeadlineFireBase,
+                DisplayDeadline: dateDeadlineDisplay,
+                RemainingTime: timeRemainingInMs
             });
         } else {
             // User not logged in or has just logged out.
