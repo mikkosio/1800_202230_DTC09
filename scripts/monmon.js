@@ -8,6 +8,7 @@ function insertMonmon() {
                     document.getElementById("room-name").innerHTML = userDoc.data().monmon;
                     document.getElementById("monmonimage").src = "./images/" + userDoc.data().monmon + ".gif";
                     document.getElementById("hatch_status").innerHTML = " hasn't hatched yet... Complete more requests so he/she grows up!"
+
                 })
         }
         else {
@@ -24,7 +25,7 @@ function updateTasks() {
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {                                                               //arrow notation                 //.data() returns data object
                     document.getElementById("number_of_tasks").innerHTML = userDoc.data().tasks_completed + "/10 Tasks Complete";
-                    //document.getElementById("progressBar").style.width = `${(userDoc.data().tasks_completed) * 10}%`;
+                    document.getElementById("progressBar").style.width = `${(userDoc.data().tasks_completed) * 10}%`;
                 })
         }
         else {
@@ -68,9 +69,9 @@ function populateTasks() {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here: 
-            let monmonTaskTemplate = document.getElementById("monmonTaskTemplate"); 
+            let monmonTaskTemplate = document.getElementById("monmonTaskTemplate");
             let monmonTaskContainer = document.getElementById("monmonTaskContainer")
-            
+
             let date = new Date();
             let taskCounter = 1;
 
@@ -83,7 +84,7 @@ function populateTasks() {
                 .then(userDoc => {
                     userDoc.forEach(task => {
                         let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
-                                
+
                         monmonTaskCard.querySelector(".task").innerHTML = task.data().TaskTitle
                         monmonTaskCard.querySelector(".date").innerHTML = task.data().DisplayDeadline
                         monmonTaskContainer.appendChild(monmonTaskCard)

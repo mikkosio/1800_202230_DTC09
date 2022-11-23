@@ -170,6 +170,13 @@ img {
     border-top: none;
 }
 
+#number_of_tasks {
+    display: flex;
+    justify-content: center;
+}
+
+;
+
 
 /*Mobile Screen*/
 @media screen and (max-width: 650px) {
