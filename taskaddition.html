@@ -44,7 +44,7 @@
     <!--Nav Bar-->
     <nav id="navbarplaceholder"></nav>
 
-    <form id="taskForm">
+    <form id="taskForm" onsubmit="submitTask()">
         <div id="task">
             <div class="mb-3" style="margin: 12px;">
                 <h4 for="exampleFormControlInput1" class="form-label">Task:</h4>
@@ -167,10 +167,13 @@
 
             </div>
 
-            <input type="submit" value="Add Task" id="submit" class="btn btn-primary" onclick="submitTask()"
-                role="button" style="margin-left: 12px; margin-top: 30px;">
+            <button id="submit" class="btn btn-primary" role="button" style="margin-left: 12px; margin-top: 30px;"> Add
+                Task </button>
 
     </form>
+
+
+
 
     </div>
 

@@ -1,32 +1,38 @@
+var form = document.getElementById("taskForm");
+function handleForm(event) { event.preventDefault(); }
+form.addEventListener('submit', handleForm);
+
 function submitTask() {
     var tasktitle = getInputValue('tasktitle');
-    var titlecontent = getElementById('tasktitle').innerHTML;
     var taskdescription = getInputValue('taskdescription');
 
     var datedeadline = getInputValue('endDate').split('-')
+
 
     let dateDeadlineFireBase = `${datedeadline[0]}-${datedeadline[1] - 1}-${datedeadline[2]}-${getInputValue("hour")}-${getInputValue("minute")}`
     let dateDeadlineDisplay = `${datedeadline[0]}-${datedeadline[1] - 1}-${datedeadline[2]}`
 
     let timeRemainingInMs = new Date(datedeadline[0], datedeadline[1] - 1, datedeadline[2], getInputValue("hour"), getInputValue("minute")) - new Date(Date.now())
 
-    if (length(length(titlecontent) > 0))
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // User logged in already or has just logged in.
-                var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
-                    TaskTitle: tasktitle,
-                    TaskDescription: taskdescription,
-                    FullDeadline: dateDeadlineFireBase,
-                    DisplayDeadline: dateDeadlineDisplay,
-                    RemainingTime: timeRemainingInMs
-                }).then(() => {
-                    window.location.href = "taskadded.html";
-                })
-            } else {
-                // User not logged in or has just logged out.
-            }
-        });
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User logged in already or has just logged in.
+            var task = db.collection("users").doc(user.uid).collection('tasks').doc(task).set({
+                TaskTitle: tasktitle,
+                TaskDescription: taskdescription,
+                FullDeadline: dateDeadlineFireBase,
+                DisplayDeadline: dateDeadlineDisplay,
+                RemainingTime: timeRemainingInMs
+            }).then(() => {
+                window.location.href = "taskadded.html";
+            })
+        } else {
+            // User not logged in or has just logged out.
+        }
+    });
+
 }
 
 function getInputValue(id) {
