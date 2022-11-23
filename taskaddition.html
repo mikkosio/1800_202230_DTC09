@@ -44,11 +44,11 @@
     <!--Nav Bar-->
     <nav id="navbarplaceholder"></nav>
 
-    <div id="taskForm">
+    <form id="taskForm">
         <div id="task">
             <div class="mb-3" style="margin: 12px;">
                 <h4 for="exampleFormControlInput1" class="form-label">Task:</h4>
-                <input class="form-control" id="tasktitle">
+                <input class="form-control" id="tasktitle" required>
             </div>
             <div class="mb-3" style="margin: 12px; margin-top: 20px;">
                 <h5 for="exampleFormControlTextarea1" class="form-label">Description:</h5>
@@ -60,7 +60,7 @@
             <h5 style="margin: 12px; margin-top: 30px; margin-bottom: 5px;">Deadline</h5>
             <div id="date">
                 <div class="col-lg-3 col-sm-6" style="margin: 12px; margin-top: 0;">
-                    <input id="endDate" class="form-control" type="date">
+                    <input id="endDate" class="form-control" type="date" required>
                 </div>
             </div>
 
@@ -167,12 +167,10 @@
 
             </div>
 
-        </div>
+            <input type="submit" value="Add Task" id="submit" class="btn btn-primary" onclick="submitTask()"
+                role="button" style="margin-left: 12px; margin-top: 30px;">
 
-
-        <button id="submit" class="btn btn-primary" onclick="submitTask()" role="button"
-            style="margin-left: 12px; margin-top: 30px;">Add
-            Task</button>
+    </form>
 
     </div>
 
