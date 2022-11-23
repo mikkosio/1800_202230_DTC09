@@ -32,7 +32,7 @@ function populateCardsDynamically() {
                             testTaskList.querySelector('.urgentBtn').innerHTML = (`<button type="button" style = "margin-bottom: 10px;" class="btn btn-success btn-sm">Healthy</button>`)
                         }
 
-                        taskList.prepend(testTaskList);
+                        taskList.append(testTaskList);
                     })
 
                 })
