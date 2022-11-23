@@ -9,8 +9,8 @@ function submitTask() {
     var datedeadline = getInputValue('endDate').split('-')
 
 
-    let dateDeadlineFireBase = `${datedeadline[0]}-${datedeadline[1] - 1}-${datedeadline[2]}-${getInputValue("hour")}-${getInputValue("minute")}`
-    let dateDeadlineDisplay = `${datedeadline[0]}-${datedeadline[1] - 1}-${datedeadline[2]}`
+    let dateDeadlineFireBase = `${datedeadline[0]}-${datedeadline[1]}-${datedeadline[2]}-${getInputValue("hour")}-${getInputValue("minute")}`
+    let dateDeadlineDisplay = `${datedeadline[0]}-${datedeadline[1]}-${datedeadline[2]}`
 
     let timeRemainingInMs = new Date(datedeadline[0], datedeadline[1] - 1, datedeadline[2], getInputValue("hour"), getInputValue("minute")) - new Date(Date.now())
 
