@@ -12,11 +12,14 @@ function populateCardsDynamically() {
                         let datedeadlineTemp = doc.data().FullDeadline
                         let array = datedeadlineTemp.split('-')
 
+
                         var taskTitle = doc.data().TaskTitle; //gets the task title field
                         var taskDescription = doc.data().TaskDescription; //gets the task description field
                         var dateDeadline = doc.data().DisplayDeadline; //gets the date deadline field
                         var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
                         var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
+
+
 
                         let testTaskList = taskItemTemplate.content.cloneNode(true);
                         testTaskList.querySelector('.task-title').innerHTML = taskTitle;     //equiv getElementByClassName
@@ -24,11 +27,13 @@ function populateCardsDynamically() {
                         testTaskList.querySelector('.date-deadline').innerHTML = dateDeadline;  //equiv getElementByClassName
                         testTaskList.querySelector('.time-deadline').innerHTML = remainingTime;  //equiv getElementByClassName
 
-                        if (remainingTime[0] == 0) {
+                        var timeLabel = new Date(timeRemainingInMs) - new Date(Date.now())
+
+                        if (timeLabel <= (Number(84000 * 1000))) {
                             testTaskList.querySelector('.urgentBtn').innerHTML = (`<button type="button" style = "margin-bottom: 10px;" class="btn btn-danger btn-sm">Urgent</button>`)
-                        } else if ((5 > Number(remainingTime[0])) > 0) {
+                        } else if (timeLabel < (Number(7 * (84000 * 1000)))) {
                             testTaskList.querySelector('.urgentBtn').innerHTML = (`<button type="button" style = "margin-bottom: 10px;" class="btn btn-warning btn-sm">Warning</button>`)
-                        } else {
+                        } else if (timeLabel >= (Number(7 * (86400 * 1000)))) {
                             testTaskList.querySelector('.urgentBtn').innerHTML = (`<button type="button" style = "margin-bottom: 10px;" class="btn btn-success btn-sm">Healthy</button>`)
                         }
 
