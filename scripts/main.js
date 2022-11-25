@@ -1,35 +1,21 @@
-function insertName() {
-    firebase.auth().onAuthStateChanged(user => {
-        // Check if a user is signed in:
-        if (user) {
-            // Do something for the currently logged-in user here: 
-            console.log(user.uid);
-            localStorage.setItem("useruid", user.uid)
-            console.log(user.displayName);
-            user_Name = user.displayName;
-
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
-            $(".name-goes-here").text(user_Name); //using jquery
-
-        } else {
-            // No user is signed in.
-        }
-    });
-}
-
-
-function populuateMainpage () {
+// Populate main page with user's name and urgent tasks
+function populuateMainpage() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here: 
             let taskCounter = 1;
+            let currentUser = db.collection("users").doc(user.uid)
 
             localStorage.setItem("useruid", user.uid)
 
-            db.collection("users").doc(user.uid).collection("tasks")
+            currentUser
+                .get()
+                .then(userDoc => {
+                    $(".main-page-name").text(userDoc.data().name)
+                })
+
+            currentUser.collection("tasks")
                 .orderBy('RemainingTime')
                 .limit(3)
                 .get()
@@ -40,16 +26,10 @@ function populuateMainpage () {
                         taskCounter += 1
                     })
                 })
-
-        
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
         } else {
-            // No user is signed in.
+            console.log("There is no user signed in!")
         }
     });
 }
 
-insertName(); //run the function
 populuateMainpage()
