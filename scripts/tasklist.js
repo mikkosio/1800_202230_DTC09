@@ -1,7 +1,7 @@
-const label = document.getElementsByName("label");
+const input = document.getElementsByName("input");
 
 function bootstrapDelete() {
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
 };
 
 function editFirestoreTask() {
@@ -28,20 +28,20 @@ function deleteTask() {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here:
-            $("body").on("click", "label", editFirestoreTask);
-            $("body").on("click", "label", bootstrapDelete);
+            $("body").on("click", "input", editFirestoreTask);
+            $("body").on("click", "input", bootstrapDelete);
         } else {
             // No user is signed in.
         }
     });
 };
 
-$("body").on("click", "label", function confirmDelete() {
+$("body").on("click", "input", function confirmDelete() {
     if (confirm("Mark task complete?")) {
         deleteTask();
         txt = "Task completed!"
     }
     else {
-        txt = "Cancelled."
+        txt = "Cancelled.";
     }
 });
