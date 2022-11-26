@@ -1,4 +1,4 @@
-var currentUser
+var currentUser;
 const monmonNames = ["Katty", "Poochy", "Croaky"];
 const random = Math.floor(Math.random() * monmonNames.length);
 
@@ -10,10 +10,10 @@ firebase.auth().onAuthStateChanged(user => {
         currentUser = db.collection("users").doc(user.uid)
 
         //functions to populate tasks on quest of day and monmon 
-        insertMonmon()
+        insertMonmon();
         updateTasks();
         updateMonmon();
-        populateTasks()
+        populateTasks();
     }
     else {
         console.log("Error: Not a user.")
@@ -48,7 +48,7 @@ function updateMonmon() {
             if (userTasks >= 10) {
                 var userMonmon = userDoc.data().monmon;
                 if (userMonmon == 'Eggy') {
-                    db.collection("users").doc(user.uid).update({
+                    currentUser.update({
                         monmon: monmonNames[random]
                     })
                 }
