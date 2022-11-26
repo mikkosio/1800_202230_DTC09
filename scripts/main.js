@@ -21,8 +21,8 @@ function populateMainPage() {
                 .get()
                 .then(userDoc => {
                     userDoc.forEach(task => {
-                        $(`#task${taskCounter}`).text(task.data().TaskTitle)
-                        $(`#date${taskCounter}`).text(task.data().DisplayDeadline)
+                        $(`#task${taskCounter}`).text(task.data().taskTitle)
+                        $(`#date${taskCounter}`).text(task.data().displayDeadline)
                         taskCounter += 1
                     })
                 })
