@@ -76,8 +76,8 @@ function populateTasks() {
             userDoc.forEach(task => {
                 let monmonTaskCard = monmonTaskTemplate.content.cloneNode(true);
 
-                monmonTaskCard.querySelector(".task").innerHTML = task.data().TaskTitle
-                monmonTaskCard.querySelector(".date").innerHTML = task.data().DisplayDeadline
+                monmonTaskCard.querySelector(".task").innerHTML = task.data().taskTitle
+                monmonTaskCard.querySelector(".date").innerHTML = task.data().displayDeadline
                 monmonTaskContainer.appendChild(monmonTaskCard)
             })
         })
