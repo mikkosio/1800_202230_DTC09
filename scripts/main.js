@@ -1,5 +1,5 @@
 // Populate main page with user's name and urgent tasks
-function populuateMainpage() {
+function populateMainPage() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
@@ -32,4 +32,4 @@ function populuateMainpage() {
     });
 }
 
-populuateMainpage()
+populateMainPage()

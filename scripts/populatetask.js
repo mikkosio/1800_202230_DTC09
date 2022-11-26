@@ -29,8 +29,8 @@ function populateCardsDynamically() {
                 .get()
                 .then(allTasks => {
                     allTasks.forEach(doc => {
-                        let datedeadlineTemp = doc.data().FullDeadline
-                        let array = datedeadlineTemp.split('-')
+                        let dateDeadlineTemp = doc.data().FullDeadline
+                        let array = dateDeadlineTemp.split('-')
 
 
                         var taskTitle = doc.data().TaskTitle; //gets the task title field
