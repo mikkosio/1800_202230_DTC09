@@ -29,7 +29,7 @@ function populateCardsDynamically() {
                 .get()
                 .then(allTasks => {
                     allTasks.forEach(doc => {
-                        let dateDeadlineTemp = doc.data().FullDeadline
+                        let dateDeadlineTemp = doc.data().fullDeadline
                         let array = dateDeadlineTemp.split('-')
 
 
