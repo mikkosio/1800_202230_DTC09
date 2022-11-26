@@ -27,7 +27,8 @@ function populateMainPage() {
                     })
                 })
         } else {
-            console.log("There is no user signed in!")
+            console.log("There is no user signed in!");
+            window.location.href = "login.html";
         }
     });
 }

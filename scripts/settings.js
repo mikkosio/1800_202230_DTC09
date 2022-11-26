@@ -8,7 +8,8 @@ firebase.auth().onAuthStateChanged(user => {
         currentUser = db.collection("users").doc(user.uid);
         populateSettings()
     } else {
-        console.log("No user is signed in!")
+        console.log("No user is signed in!");
+        window.location.href = "login.html";
     }
 });
 
@@ -45,8 +46,8 @@ function populateSettings() {
             if (lastName != null) {
                 document.getElementById("lastname").value = lastName;
 
-                $(".name-goes-here").text(userDoc.data().name); 
-                $(".email-goes-here").text(user_Email); 
+                $(".name-goes-here").text(userDoc.data().name);
+                $(".email-goes-here").text(user_Email);
             }
         })
 }
