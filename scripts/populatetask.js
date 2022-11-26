@@ -33,7 +33,7 @@ function populateCardsDynamically() {
                         let array = dateDeadlineTemp.split('-')
 
 
-                        var taskTitle = doc.data().TaskTitle; //gets the task title field
+                        var taskTitle = doc.data().taskTitle; //gets the task title field
                         var taskDescription = doc.data().taskDescription; //gets the task description field
                         var dateDeadline = doc.data().displayDeadline; //gets the date deadline field
                         var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
