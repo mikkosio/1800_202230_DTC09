@@ -30,7 +30,6 @@ function saveUserInfo() {
             console.log("Document successfully updated.")
             document.getElementById('personalInfoFields').disabled = true;
         })
-    alert("Changes succesfully saved")
 }
 
 //populate the settings page by reading from firestore database, specifically the user's name on the settings page
@@ -50,6 +49,14 @@ function populateSettings() {
                 $(".email-goes-here").text(user_Email);
             }
         })
+}
+
+function myFunction(){
+    $('#exampleModal').modal('show') 
+}
+
+function closeModal(){
+    $('#exampleModal').modal('hide') 
 }
 
 
