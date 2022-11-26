@@ -8,7 +8,7 @@ function editFirestoreTask() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            var tasks_query = db.collection('users').doc(user.uid).collection('tasks').where('TaskTitle', '==', $(this).find(".task-title").text());
+            var tasks_query = db.collection('users').doc(user.uid).collection('tasks').where('taskTitle', '==', $(this).find(".task-title").text());
             tasks_query.get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     doc.ref.delete();
