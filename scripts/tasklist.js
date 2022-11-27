@@ -1,12 +1,13 @@
-const input = document.getElementsByName("input");
+const input = document.getElementsByName("btn btn-primary");
 
 function bootstrapDelete() {
     $(this).parent().parent().remove();
+    console.log("Task Deleted")
 };
 
 function editFirestoreTask() {
     firebase.auth().onAuthStateChanged(user => {
-        // Check if a user is signed in:
+        // Check if a user is signed in
         if (user) {
             var tasks_query = db.collection('users').doc(user.uid).collection('tasks').where('taskTitle', '==', $(this).parent().find(".task-title").text());
             tasks_query.get().then(function (querySnapshot) {
@@ -28,20 +29,21 @@ function deleteTask() {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here:
-            $("body").on("click", "input", editFirestoreTask);
-            $("body").on("click", "input", bootstrapDelete);
+            $('#deleteTask').on('hidden.bs.modal',editFirestoreTask)
+            $('#deleteTask').on('hidden.bs.modal',bootstrapDelete)
         } else {
             // No user is signed in.
         }
     });
 };
 
-$("body").on("click", "input", function confirmDelete() {
-    if (confirm("Mark task complete?")) {
-        deleteTask();
-        txt = "Task completed!"
-    }
-    else {
-        txt = "Cancelled.";
-    }
-});
+//Show confirmation modal for delete task
+function deleteTaskModal(){
+    $('#deleteTask').modal('show') 
+}
+
+//Close modal 
+function closeModal(){
+    $('#deleteTask').modal('hide') 
+}
+
