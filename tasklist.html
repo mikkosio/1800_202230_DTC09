@@ -98,18 +98,18 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <h5 class="modal-title" id="exampleModalLabel">Task Complete?</h5>
+                          <button type="button"  class="close" data-dismiss="modal" aria-label="Close" onclick = "closeModal()">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                            Are you sure you want to delete this task?
+                            Completed this task?
                         </div>
                         <div class="modal-footer">
                             <p><strong class="task-title" style = "display: none;">tasktitle</strong>
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary" onclick = "closeModal(), deleteTask()">Delete Task</button>
+                          <button type="button" class="btn btn-secondary" onclick = "closeModal()" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" onclick = "closeModal(), deleteTask()">Confirm Task</button>
                         </div>
                       </div>
                     </div>
@@ -122,10 +122,11 @@
                 <div><small><b>Deadline:&nbsp;</b>
                         <p class="date-deadline" style="display: inline-block;">November 13, 2022 </p>
                         <p><b>Time Left: </b><span class="time-deadline">22:03</span>
+                            <p><button small>View Details</button><p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
+                                labore.</p></p>
                     </small></div>
-                <p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
-                    labore.</p>
+           
                 </span>
             </label>
         </div>
