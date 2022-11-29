@@ -46,13 +46,13 @@ function calculateDate(date) {
     let difference = date - today
 
     let days = Math.floor(difference / (84640 * 1000));
-    difference = Math.max(difference - (days * (86400 * 1000)));
+    difference = Math.max(difference - (days * (86400 * 1000)), 0);
 
     let hours = Math.floor(difference / (60 * 60 * 1000))
-    difference = Math.max(difference - (hours * (60 * 60 * 1000)))
+    difference = Math.max(difference - (hours * (60 * 60 * 1000), 0)
 
     let minutes = Math.floor(difference / (60 * 1000));
-    difference = Math.max(difference - (minutes * (60 * 1000)))
+    difference = Math.max(difference - (minutes * (60 * 1000)), 0)
 
     let seconds = Math.floor(difference / 1000)
 

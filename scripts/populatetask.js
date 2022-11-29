@@ -4,13 +4,13 @@ function calculateDate(date) {
     let difference = date - today
 
     let days = Math.floor(difference / (84640 * 1000));
-    difference = Math.max(difference - (days * (86400 * 1000)));
+    difference = Math.max(difference - (days * (86400 * 1000)), 0);
 
     let hours = Math.floor(difference / (60 * 60 * 1000))
-    difference = Math.max(difference - (hours * (60 * 60 * 1000)))
+    difference = Math.max(difference - (hours * (60 * 60 * 1000)), 0)
 
     let minutes = Math.floor(difference / (60 * 1000));
-    difference = Math.max(difference - (minutes * (60 * 1000)))
+    difference = Math.max(difference - (minutes * (60 * 1000)), 0)
 
     let seconds = Math.floor(difference / 1000)
 
@@ -66,11 +66,13 @@ function populateCardsDynamically() {
     })
 }
 
+
+
 function updateTime(){
         setInterval(() => {
         let taskItemTemplate = document.getElementById("taskItemTemplate");
         let taskList = document.getElementById("taskList");
-    
+        
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 db.collection("users").doc(user.uid).collection("tasks")
@@ -97,11 +99,5 @@ function updateTime(){
     }, 1000)
 }
 
-
-function time() { 
-    setTimeout(async () => {
-        updateTime()
-    }, 1000)
-}
+updateTime()
 populateCardsDynamically()
-time()
