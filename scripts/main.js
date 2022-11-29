@@ -20,8 +20,16 @@ function populateMainPage() {
                 .get()
                 .then(userDoc => {
                     userDoc.forEach(task => {
+                     
+                        let dateDeadlineTemp = task.data().fullDeadline
+                        let array = dateDeadlineTemp.split('-')
+                        var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
+                        var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
+
                         $(`#task${taskCounter}`).text(task.data().taskTitle)
                         $(`#date${taskCounter}`).text(task.data().displayDeadline)
+                        $(`.time-deadline${taskCounter}`).text(remainingTime)
+
                         taskCounter += 1
                     })
                 })
@@ -53,38 +61,8 @@ function calculateDate(date) {
 
 function updateTime(){
     setInterval(async () => {
-        let taskItemTemplate = document.getElementById("taskItemTemplate");
-        let taskList = document.getElementById("taskList");
+    populateMainPage()
+}, 400)}
 
-        let taskCounter = 1
-    
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("tasks")
-                    .orderBy("RemainingTime")
-                    .limit(3)
-                    .get()
-                    .then(allTasks => {
-                        allTasks.forEach(doc => {
-                           
-                            let dateDeadlineTemp = doc.data().fullDeadline
-                            let array = dateDeadlineTemp.split('-')
-    
-                            var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
-                            var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
-    
-                            document.querySelector(`.time-deadline${taskCounter}`).innerHTML = remainingTime;  //equiv getElementByClassName
-                            taskCounter += 1; 
-                
-                        })
-    
-                    })
-            } else {
-                // No user is signed in
-            }
-        })
-    }, 1000)
-}
-
-populateMainPage()
 updateTime()
+
