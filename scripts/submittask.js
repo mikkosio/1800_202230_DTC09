@@ -1,5 +1,10 @@
+//Task form object
 var form = document.getElementById("taskForm");
+
+//Prevent user from inputting an empty form
 function handleForm(event) { event.preventDefault(); }
+
+//Event listeners for task submission
 form.addEventListener('submit', handleForm);
 form.addEventListener('submit', submitTask);
 
@@ -31,6 +36,7 @@ function submitTask() {
 
 }
 
+//Retrieve id value entered
 function getInputValue(id) {
     return document.getElementById(id).value;
 }
