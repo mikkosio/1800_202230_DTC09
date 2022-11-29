@@ -88,7 +88,11 @@ Firebase hosting files:
 ```
 
 Image References:
-
+Croaky.gif: <https://www.newgrounds.com/art/view/cowboysprinkles/frog-loop> user cowboysprinkles
+Katty.gif: <https://www.pinterest.ca/pin/381820874664581109/> user vividivavidibu
+Poochy.gif: <https://tenor.com/en-CA/view/dog-happy-8bit-gif-10072229> Toby Fox
+Eggy.gif: <https://emoji.gg/emoji/5789_eggshake> user TURTLE
+task.png: <https://www.flaticon.com/free-icon/task_2098402?term=task&page=1&position=1&page=1&position=1&related_id=2098402&origin=search> Freepik
 Tips for file naming files and folders:
 
 * use lowercase with no spaces
