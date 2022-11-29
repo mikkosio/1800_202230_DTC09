@@ -23,14 +23,14 @@ function populateMainPage() {
                 .get()
                 .then(userDoc => {
                     userDoc.forEach(task => {
-                     
+
                         let dateDeadlineTemp = task.data().fullDeadline
-                        let array = dateDeadlineTemp.split('-') 
+                        let array = dateDeadlineTemp.split('-')
                         var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4]) // Convert remaining time to MS
                         var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
-                        
+
                         //Append calculate date/time to HTML
-                        $(`#task${taskCounter}`).text(task.data().taskTitle) 
+                        $(`#task${taskCounter}`).text(task.data().taskTitle)
                         $(`#date${taskCounter}`).text(task.data().displayDeadline)
                         $(`.time-deadline${taskCounter}`).text(remainingTime)
 
@@ -66,10 +66,11 @@ function calculateDate(date) {
 }
 
 //Updates the timer for the main page tasks
-function updateTime(){
+function updateTime() {
     setInterval(async () => {
-    populateMainPage()
-}, 400)}
+        populateMainPage()
+    }, 400)
+}
 
 updateTime()
 
