@@ -32,13 +32,14 @@ function saveUserInfo() {
         })
 }
 
-//populate the settings page by reading from firestore database, specifically the user's name on the settings page
+//Populate the settings page by reading from firestore database, specifically the user's name on the settings page
 function populateSettings() {
     currentUser
         .onSnapshot(userDoc => {
             var firstName = userDoc.data().name.split(' ')[0]
             var lastName = userDoc.data().name.split(' ')[1]
 
+            //If not text input, then keep the previous name from firestore
             if (firstName != null) {
                 document.getElementById("firstname").value = firstName;
             }
@@ -51,10 +52,12 @@ function populateSettings() {
         })
 }
 
+//On click function to show the modal insettings page 
 function myFunction(){
     $('#exampleModal').modal('show') 
 }
 
+//On click function to hide modal in settings page
 function closeModal(){
     $('#exampleModal').modal('hide') 
 }

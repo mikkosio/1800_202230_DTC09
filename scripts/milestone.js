@@ -1,4 +1,5 @@
-function openCity(evt, cityName) {
+//Open milestone page tabs
+function openMilestones(evt, cityName) {
   // Declare all variables
   var i, tabContent, tabLinks;
 
@@ -19,15 +20,15 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-
+//Populate milestones page
 function updateTasks() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if a user is signed in:
     if (user) {
       db.collection("users").doc(user.uid)
-        .onSnapshot(userDoc => {                                                               //arrow notation                 //.data() returns data object
-          total_tasks = userDoc.data().tasks_completed
+        .onSnapshot(userDoc => {                                                        
 
+          //Check for tasks completed based on tasks complete from firestore
           if (total_tasks / 0.1 >= 100) {
             milestone_1 = "completed"
           } else {
@@ -60,6 +61,7 @@ function updateTasks() {
 
           document.getElementById("number_of_tasks").innerHTML = "Total Tasks Completed: " + total_tasks;
 
+          //Populate HTML with milestones based on tasks completed from firestore
           if (milestone_1 == "completed") {
             document.getElementById("progress_task_1").innerHTML = "10 / 10";
             document.getElementById("progress_task_1").style.width = "100%";
@@ -99,7 +101,6 @@ function updateTasks() {
             document.getElementById("progress_task_5").innerHTML = total_tasks + " / 1000";
             document.getElementById("progress_task_5").style.width = total_tasks / 10 + "%";
           };
-
           completeTask(total_tasks, 10);
           completeTask(total_tasks, 25);
           completeTask(total_tasks, 50);
@@ -112,9 +113,10 @@ function updateTasks() {
     }
   })
 }
+
 updateTasks();
 
-
+//Style completed milestones once complete
 function completeTask(amount_completed, amount_required) {
   if (amount_completed >= amount_required) {
     document.getElementById("done_" + amount_required).style.display = "block";

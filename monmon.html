@@ -41,11 +41,11 @@
   <!-- Your HTML Layout go here -->
   <!------------------------------>
   <!--Nav Bar-->
-
   <nav id="navbarplaceholder" style="margin-bottom: 35px"></nav>
 
+  <!--Monmon name-->
   <h2 style="margin-left: 25px;"><span id="room-name"></span>'s Room</h2>
-
+  <!--User monmon image-->
   <div id="imagecontainer">
     <div id="monmon">
       <img id="monmonimage" src="">
@@ -58,12 +58,13 @@
         aria-valuenow="25" aria-valuemin="10" aria-valuemax="5000" style="width: 20%">
       </div>
     </div>
-
+    <!--Number of tasks completed-->
     <span id="number_of_tasks" style="align-items:center"></span>
   </div>
 
   <h6 class="bg-light p-2 border-top border-bottom" style="margin-bottom: 3px;">Tasks/Quests of the Day</h6>
 
+  <!--Monmon task template-->
   <template id="monmonTaskTemplate">
     <ul class="list-group list-group-light" style="margin-bottom: 3px;">
       <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -92,7 +93,6 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <script src="./scripts/script.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_TEAM09.js"></script>
   <script src="./scripts/monmon.js"></script>

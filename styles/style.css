@@ -1,3 +1,4 @@
+/*Landing page and task page styling*/
 .jumbotron {
     border: black 5px;
     width: 40%;
@@ -56,6 +57,7 @@ h3 {
     color: gray;
 }
 
+/*Mon mon image styling*/
 #imgcontainer {
     width: 50%;
 }
@@ -86,6 +88,7 @@ h3 {
     margin-bottom: 50px;
 }
 
+/*Carousel Styling on main page */
 #hero-carousel button {
     background-color: gray
 }
@@ -174,8 +177,6 @@ img {
     display: flex;
     justify-content: center;
 }
-
-
 
 /*Mobile Screen*/
 @media screen and (max-width: 650px) {

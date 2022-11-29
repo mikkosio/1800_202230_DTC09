@@ -66,7 +66,6 @@ function populateCardsDynamically() {
     })
 }
 
-
 function updateTime(){
         setInterval(() => {
         let taskItemTemplate = document.getElementById("taskItemTemplate");

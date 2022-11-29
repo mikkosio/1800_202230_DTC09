@@ -41,7 +41,6 @@
                 'opsz' 40
         }
     </style>
-
 </head>
 
 <body>
@@ -66,6 +65,8 @@
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+
+        <!--Static carousel cards -->
         <div class="carousel-inner">
             <div id="slide1" class="carousel-item active c-item">
                 <div class="p-3 mb-3 bg-light rounded-3" alt="Slide 1">
@@ -73,7 +74,8 @@
                         <h1 class="display-4 fw-bold"><span id="task1">Enter a task!</span></h1>
                         <p class="time"><span class="material-symbols-outlined"
                                 style="margin-top: 15px;">priority_high</span>
-                            <span style="margin-left: 5px">Deadline Date: </span><span id="date1"></span><b>Time Left: </b><span class="time-deadline1"></span>
+                            <span style="margin-left: 5px"><b>Deadline Date:</b> </span><span id="date1"></span><b>Time
+                                Left: </b><span class="time-deadline1"></span>
                         </p>
                     </div>
                 </div>
@@ -85,7 +87,8 @@
                     <div class="container-fluid py-5">
                         <h1 class="display-4 fw-bold"><span id="task2">Enter a task!</h1>
                         <p class="time"><span class="material-symbols-outlined"> priority_high</span>
-                            <span style="margin-left: 5px">Deadline Date: </span><span id="date2"></span></span><b>Time Left: </b><span class="time-deadline2"></span>
+                            <span style="margin-left: 5px"><b>Deadline Date: </b></span><span
+                                id="date2"></span></span><b>Time Left: </b><span class="time-deadline2"></span>
                         </p>
                     </div>
 
@@ -97,15 +100,16 @@
                 <div class="p-3 mb-3 bg-light rounded-3" alt="Slide 3">
                     <div class="container-fluid py-5">
                         <h1 class="display-4 fw-bold"><span id="task3">Enter a task!</span></h1>
-                        <p class="time"><span class="material-symbols-outlined"> priority_high</span><span
-                                style="margin-left: 5px">Deadline Date: </span><span id="date3"><b>Time Left: </b><span class="time-deadline3"></span></p>
+                        <p class="time"><span class="material-symbols-outlined"> priority_high</span><span><span
+                                    style="margin-left: 5px"><b>Deadline Date:</b> </span><span id="date3"><b>Time Left:
+                                    </b><span class="time-deadline3"></span></p>
                     </div>
                 </div>
                 <div class="carousel-caption top-0 mt-4">
                 </div>
             </div>
         </div>
-
+        <!--Carousel control buttons -->
         <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -126,10 +130,8 @@
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <!-- Link to scripts of your own -->
-    <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
