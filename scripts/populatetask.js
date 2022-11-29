@@ -29,6 +29,7 @@ function populateCardsDynamically() {
                 .get()
                 .then(allTasks => {
                     allTasks.forEach(doc => {
+                       
                         let dateDeadlineTemp = doc.data().fullDeadline
                         let array = dateDeadlineTemp.split('-')
 
@@ -38,8 +39,6 @@ function populateCardsDynamically() {
                         var dateDeadline = doc.data().displayDeadline; //gets the date deadline field
                         var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
                         var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
-
-
 
                         let testTaskList = taskItemTemplate.content.cloneNode(true);
                         testTaskList.querySelector('.task-title').innerHTML = taskTitle;     //equiv getElementByClassName
@@ -66,4 +65,43 @@ function populateCardsDynamically() {
         }
     })
 }
-populateCardsDynamically();
+
+function updateTime(){
+        setInterval(() => {
+        let taskItemTemplate = document.getElementById("taskItemTemplate");
+        let taskList = document.getElementById("taskList");
+    
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                db.collection("users").doc(user.uid).collection("tasks")
+                    .orderBy("RemainingTime")
+                    .get()
+                    .then(allTasks => {
+                        allTasks.forEach(doc => {
+                           
+                            let dateDeadlineTemp = doc.data().fullDeadline
+                            let array = dateDeadlineTemp.split('-')
+    
+                            var timeRemainingInMs = new Date(array[0], array[1] - 1, array[2], array[3], array[4])
+                            var remainingTime = calculateDate(timeRemainingInMs); // gets the time deadline field
+    
+                            document.querySelector('.time-deadline').innerHTML = remainingTime;  //equiv getElementByClassName
+
+                        })
+    
+                    })
+            } else {
+                // No user is signed in
+            }
+        })
+    }, 1000)
+}
+
+
+function time() { 
+    setTimeout(async () => {
+        updateTime()
+    }, 1000)
+}
+populateCardsDynamically()
+time()
