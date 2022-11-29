@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+# Inter-Task-Tivity (Add your Title here)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -25,7 +25,7 @@ Technologies used for this project:
 
 Content of the project folder:
 
-```
+```MD040
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
