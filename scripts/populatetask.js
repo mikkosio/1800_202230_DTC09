@@ -1,3 +1,4 @@
+//Calculate a given date in MS in the format of days:hours:minutes:seconds
 function calculateDate(date) {
     let today = new Date(Date.now())
 
@@ -14,10 +15,10 @@ function calculateDate(date) {
 
     let seconds = Math.floor(difference / 1000)
 
-    return (`${days}d:${hours}h:${minutes}min:${seconds}s`)
+    return (`${Math.max(days, 0)}d:${Math.max(hours, 0)}h:${Math.max(minutes, 0)}min:${Math.max(seconds, 0)}s`)
 }
 
-
+//Populate task cards dynamically on the task list page. Populates task by remaining time as well
 function populateCardsDynamically() {
     let taskItemTemplate = document.getElementById("taskItemTemplate");
     let taskList = document.getElementById("taskList");
@@ -32,7 +33,6 @@ function populateCardsDynamically() {
                        
                         let dateDeadlineTemp = doc.data().fullDeadline
                         let array = dateDeadlineTemp.split('-')
-
 
                         var taskTitle = doc.data().taskTitle; //gets the task title field
                         var taskDescription = doc.data().taskDescription; //gets the task description field
@@ -61,11 +61,10 @@ function populateCardsDynamically() {
 
                 })
         } else {
-            // No user is signed in
+            console.log("No user is signed in")
         }
     })
 }
-
 
 
 function updateTime(){
@@ -99,5 +98,4 @@ function updateTime(){
     }, 1000)
 }
 
-updateTime()
 populateCardsDynamically()
