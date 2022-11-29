@@ -56,7 +56,7 @@ function calculateDate(date) {
 
     let seconds = Math.floor(difference / 1000)
 
-    return (`${days}d:${hours}h:${minutes}min:${seconds}s`)
+    return (`${Math.max(days, 0)}d:${Math.max(hours, 0)}h:${Math.max(minutes, 0)}min:${Math.max(seconds, 0)}s`)
 }
 
 function updateTime(){
