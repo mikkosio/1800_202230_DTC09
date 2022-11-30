@@ -26,7 +26,10 @@ function updateTasks() {
     // Check if a user is signed in:
     if (user) {
       db.collection("users").doc(user.uid)
-        .onSnapshot(userDoc => {                                                        
+        .onSnapshot(userDoc => {
+
+          // Get number of task completed from firestore
+          total_tasks = userDoc.data().tasks_completed
 
           //Check for tasks completed based on tasks complete from firestore
           if (total_tasks / 0.1 >= 100) {
