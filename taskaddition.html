@@ -45,32 +45,35 @@
     <nav id="navbarplaceholder"></nav>
 
     <form id="taskForm">
+        <!-- Task Information -->
         <div id="task">
+            <!-- Task Title -->
             <div class="mb-3" style="margin: 12px;">
                 <h4 for="exampleFormControlInput1" class="form-label">Task:</h4>
                 <input class="form-control" id="tasktitle" required>
             </div>
+            <!-- Task Description -->
             <div class="mb-3" style="margin: 12px; margin-top: 20px;">
                 <h5 for="exampleFormControlTextarea1" class="form-label">Description:</h5>
                 <textarea class="form-control" id="taskdescription" rows="3"></textarea>
             </div>
         </div>
 
+        <!-- Task Deadline -->
         <div id="deadline">
             <h5 style="margin: 12px; margin-top: 30px; margin-bottom: 5px;">Deadline</h5>
+            <!-- Date Deadline -->
             <div id="date">
                 <div class="col-lg-3 col-sm-6" style="margin: 12px; margin-top: 0;">
                     <input id="endDate" class="form-control" type="date" required>
                 </div>
             </div>
-
+            <!-- Time Deadline -->
             <div id="time">
-
                 <h6 style="margin-left: 14px; margin-bottom: 0; float: left;">Hour</h6>
                 <h6 style="margin-left: 48px; margin-bottom: 0; float:left">Minute</h6>
-
                 <br>
-
+                <!-- Hour -->
                 <select id="hour" class="form-select" aria-label="Default select example"
                     style="width: 70px; margin: 12px; margin-top: 0; margin-right: 5px; float: left; ">
                     <option value="00">00</option>
@@ -97,9 +100,11 @@
                     <option value="21">21</option>
                     <option value="22">22</option>
                     <option value="23">23</option>
-
                 </select>
+
                 <h6 style="float: left; margin: 0; margin-top: 7px; margin-right: 5px;">:</h6>
+
+                <!-- Minute -->
                 <select id="minute" class="form-select" aria-label="Default select example"
                     style="width: 70px; margin: 12px; margin-top: 0;">
                     <option value="00">00</option>
@@ -162,18 +167,12 @@
                     <option value="57">57</option>
                     <option value="58">58</option>
                     <option value="59">59</option>
-
                 </select>
-
             </div>
-
+            <!-- Submit Button -->
             <button id="submit" class="btn btn-primary" role="button" style="margin-left: 12px; margin-top: 30px;"> Add
                 Task </button>
-
     </form>
-
-
-
 
     </div>
 

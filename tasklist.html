@@ -88,32 +88,37 @@
         </div>
     </div>
 
-
+    <!-- Template for tasks -->
     <template id="taskItemTemplate">
         <div class="taskItem">
             <label class="list-group-item d-flex gap-3">
-                <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;" data-toggle="modal" data-target="deleteTask" onclick= "deleteTaskModal()">
-                
-                <div class="modal fade" id="deleteTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;"
+                    data-toggle="modal" data-target="deleteTask" onclick="deleteTaskModal()">
+
+                <div class="modal fade" id="deleteTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Task Complete?</h5>
-                          <button type="button"  class="close" data-dismiss="modal" aria-label="Close" onclick = "closeModal()">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Task Complete?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                    onclick="closeModal()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Completed this task?
+                            </div>
+                            <div class="modal-footer">
+                                <p><strong class="task-title" style="display: none;">tasktitle</strong>
+                                    <button type="button" class="btn btn-secondary" onclick="closeModal()"
+                                        data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="closeModal(), deleteTask()">Confirm Task</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            Completed this task?
-                        </div>
-                        <div class="modal-footer">
-                            <p><strong class="task-title" style = "display: none;">tasktitle</strong>
-                          <button type="button" class="btn btn-secondary" onclick = "closeModal()" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary" onclick = "closeModal(), deleteTask()">Confirm Task</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
 
                 <span class="pt-1 form-checked-content">
                     <span class="urgentBtn"></span></p>
@@ -121,23 +126,19 @@
                 </span></p>
                 <div><small><b>Deadline:&nbsp;</b>
                         <p class="date-deadline" style="display: inline-block;">November 13, 2022 </p>
-                        <p><b>Time Left: </b><span class="time-deadline">22:03</span> <span class="time-deadline"></span>
-                            <p><button small>View Details</button><p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
-                                labore.</p></p>
+                        <p><b>Time Left: </b><span class="time-deadline">22:03</span> <span
+                                class="time-deadline"></span>
+                        <p><button small>View Details</button>
+                        <p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
+                            labore.</p>
+                        </p>
                     </small></div>
-           
+
                 </span>
             </label>
         </div>
     </template>
-
-    <!-- Button trigger modal -->
-
-
-
-  <!-- Modal -->
-
 
     <!--Footer-->
     <footer id="footerplaceholder"></footer>
