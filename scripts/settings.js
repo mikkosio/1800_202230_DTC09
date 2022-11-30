@@ -53,13 +53,13 @@ function populateSettings() {
 }
 
 //On click function to show the modal insettings page 
-function myFunction(){
-    $('#exampleModal').modal('show') 
+function myFunction() {
+    $('#exampleModal').modal('show')
 }
 
 //On click function to hide modal in settings page
-function closeModal(){
-    $('#exampleModal').modal('hide') 
+function closeModal() {
+    $('#exampleModal').modal('hide')
 }
 
 

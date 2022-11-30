@@ -178,6 +178,17 @@ img {
     justify-content: center;
 }
 
+.message {
+    margin-top: 60px;
+}
+
+.btn-outline-secondary {
+    margin-top: 30px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    color: black;
+}
+
 /*Mobile Screen*/
 @media screen and (max-width: 650px) {
     h3 {
@@ -215,13 +226,13 @@ img {
     }
 
     .carousel-control-prev {
-       height: 100%;
-       display:none;
+        height: 100%;
+        display: none;
     }
-    
+
     .carousel-control-next {
         height: 100%;
-        display:none; 
+        display: none;
     }
 
     #hero-carousel {
@@ -239,7 +250,9 @@ img {
         width: 100%;
     }
 
-    #task1, #task2, #task3 {
+    #task1,
+    #task2,
+    #task3 {
         font-size: 100%;
         white-space: nowrap;
     }

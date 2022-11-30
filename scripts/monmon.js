@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
-//Inject monmon into html
+//Inject monmon into HTML using data from firestore
 function insertMonmon() {
     currentUser
         .onSnapshot(userDoc => {
@@ -68,6 +68,7 @@ function populateTasks() {
     let date = new Date();
     let taskCounter = 1;
 
+    //Reading collection from firestore and is sorted by RemainingTime and limited to one query
     currentUser.collection("tasks")
         .orderBy("RemainingTime")
         .limit(1)

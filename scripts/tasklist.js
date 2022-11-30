@@ -20,7 +20,6 @@ function editFirestoreTask() {
                 });
             });
         }
-
         else {
             console.log("No user is signed in")
         };
@@ -32,8 +31,8 @@ function deleteTask() {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here:
-            $('#deleteTask').on('hidden.bs.modal',editFirestoreTask)
-            $('#deleteTask').on('hidden.bs.modal',bootstrapDelete)
+            $('#deleteTask').on('hidden.bs.modal', editFirestoreTask)
+            $('#deleteTask').on('hidden.bs.modal', bootstrapDelete)
         } else {
             console.log("No user is signed in")
         }
@@ -41,12 +40,12 @@ function deleteTask() {
 };
 
 //Show confirmation modal for delete task
-function deleteTaskModal(){
-    $('#deleteTask').modal('show') 
+function deleteTaskModal() {
+    $('#deleteTask').modal('show')
 }
 
 //Close modal 
-function closeModal(){
-    $('#deleteTask').modal('hide') 
+function closeModal() {
+    $('#deleteTask').modal('hide')
 }
 

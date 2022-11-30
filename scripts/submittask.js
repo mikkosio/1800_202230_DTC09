@@ -33,9 +33,7 @@ function submitTask() {
             // User not logged in or has just logged out.
         }
     });
-
 }
-
 //Retrieve id value entered
 function getInputValue(id) {
     return document.getElementById(id).value;

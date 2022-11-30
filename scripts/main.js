@@ -48,8 +48,10 @@ function populateMainPage() {
 function calculateDate(date) {
     let today = new Date(Date.now())
 
+    //calculate time difference between deadline date and todays date
     let difference = date - today
 
+    //calculations to format the date by days:hours:minutes:seconds
     let days = Math.floor(difference / (84640 * 1000));
     difference = Math.max(difference - (days * (86400 * 1000)), 0);
 

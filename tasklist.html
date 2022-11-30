@@ -1,157 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Inter-Task-Tivity</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <head>
+        <title>Inter-Task-Tivity</title>
+        <meta name="comp1800 template" content="My 1800 App">
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        <!------------------------------------------>
+        <!-- Bootstrap Library CSS JS CDN go here -->
+        <!------------------------------------------>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+        <!-------------------------------------------------------->
+        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+        <!-------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet"
+            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+        <!-------------------------------------------->
+        <!-- Other libraries and styles of your own -->
+        <!-------------------------------------------->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
 
-    <style>
-        p {
-            margin: 0;
-        }
+        <style>
+            p {
+                margin: 0;
+            }
 
-        label {
-            cursor: pointer;
-        }
+            label {
+                cursor: pointer;
+            }
 
-        a {
-            text-decoration: none;
-            color: black;
-        }
+            a {
+                text-decoration: none;
+                color: black;
+            }
 
-        a:hover {
-            text-decoration: none;
-            color: white;
-        }
+            a:hover {
+                text-decoration: none;
+                color: white;
+            }
 
-        a:visited {
-            text-decoration: none;
-        }
-    </style>
-</head>
+            a:visited {
+                text-decoration: none;
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!--Nav Bar-->
+        <!------------------------------>
+        <!-- Your HTML Layout go here -->
+        <!------------------------------>
+        <!--Nav Bar-->
 
-    <nav id="navbarplaceholder"></nav>
+        <nav id="navbarplaceholder"></nav>
 
-    <!--Task Reminder Cards-->
+        <!--Task Reminder Cards-->
 
-    <div class="container">
-        <h2 id="listname" style="margin: 35px auto; margin-bottom: 0px;">My Tasks</h2>
-        <!-- Here is container for cards  -->
         <div class="container">
-            <div id="hikeCardGroup" class="row row-cols-auto">
+            <h2 id="listname" style="margin: 35px auto; margin-bottom: 0px;">My Tasks</h2>
+            <!-- Here is container for cards  -->
+            <div class="container">
+                <div id="hikeCardGroup" class="row row-cols-auto">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container2" style="display: flex; justify-content: center; margin-top: 50px;">
-        <div class="center" style="width: 75%">
-            <div id="taskList" class="list-group w-auto">
+        <div class="container2" style="display: flex; justify-content: center; margin-top: 50px;">
+            <div class="center" style="width: 75%">
+                <div id="taskList" class="list-group w-auto">
+                </div>
+                <a href="./taskaddition.html"><button type="button" class="btn btn-outline-dark" id="addTaskBtn">Add
+                        New Task</button></a>
             </div>
-            <a href="./taskaddition.html"><button type="button" class="btn btn-outline-dark" id="addTaskBtn">Add
-                    New Task</button></a>
         </div>
-    </div>
 
-    <!-- Template for tasks -->
-    <template id="taskItemTemplate">
-        <div class="taskItem">
-            <label class="list-group-item d-flex gap-3">
-                <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;"
-                    data-toggle="modal" data-target="deleteTask" onclick="deleteTaskModal()">
+        <!-- Template for tasks -->
+        <template id="taskItemTemplate">
+            <div class="taskItem">
+                <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;"
+                        data-toggle="modal" data-target="deleteTask" onclick="deleteTaskModal()">
 
-                <div class="modal fade" id="deleteTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Task Complete?</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                                    onclick="closeModal()">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Completed this task?
-                            </div>
-                            <div class="modal-footer">
-                                <p><strong class="task-title" style="display: none;">tasktitle</strong>
-                                    <button type="button" class="btn btn-secondary" onclick="closeModal()"
-                                        data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary"
-                                        onclick="closeModal(), deleteTask()">Confirm Task</button>
+                    <div class="modal fade" id="deleteTask" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Task Complete?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                        onclick="closeModal()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Completed this task?
+                                </div>
+                                <div class="modal-footer">
+                                    <p><strong class="task-title" style="display: none;">tasktitle</strong>
+                                        <button type="button" class="btn btn-secondary" onclick="closeModal()"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="closeModal(), deleteTask()">Confirm Task</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <span class="pt-1 form-checked-content">
-                    <span class="urgentBtn"></span></p>
-                    <p><strong class="task-title" style></strong>
-                </span></p>
-                <div><small><b>Deadline:&nbsp;</b>
-                        <p class="date-deadline" style="display: inline-block;">November 13, 2022 </p>
-                        <p><b>Time Left: </b><span class="time-deadline">22:03</span> <span
-                                class="time-deadline"></span>
-                        <p><p><b>Task Description:</b></p>
-                        <p class="task-description" style = "display: inline-block;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
-                            labore.</p>
-                        </p>
-                    </small></div>
+                    <span class="pt-1 form-checked-content">
+                        <span class="urgentBtn"></span></p>
+                        <p><strong class="task-title" style></strong>
+                    </span></p>
+                    <div><small><b>Deadline:&nbsp;</b>
+                            <p class="date-deadline" style="display: inline-block;">November 13, 2022 </p>
+                            <p><b>Time Left: </b><span class="time-deadline">22:03</span> <span
+                                    class="time-deadline"></span>
+                            <p>
+                            <p><b>Task Description:</b></p>
+                            <p class="task-description" style="display: inline-block;">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit.
+                                Maiores minus facere excepturi a accusamus ducimus porro architecto aspernatur molestias
+                                labore.</p>
+                            </p>
+                        </small></div>
 
-                </span>
-            </label>
-        </div>
-    </template>
+                    </span>
+                </label>
+            </div>
+        </template>
 
-    <!--Footer-->
-    <footer id="footerplaceholder"></footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+        <!--Footer-->
+        <footer id="footerplaceholder"></footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/populatetask.js"></script>
-    <script src="./scripts/tasklist.js"></script>
-    <script src="./scripts/main.js"></script>
-</body>
+        <!-- Link to scripts of your own -->
+        <script src="./scripts/skeleton.js"></script>
+        <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+        <script src="./scripts/populatetask.js"></script>
+        <script src="./scripts/tasklist.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
 
 </html>

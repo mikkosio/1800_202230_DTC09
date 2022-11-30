@@ -1,192 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Inter-Task-Tivity</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <head>
+        <title>Inter-Task-Tivity</title>
+        <meta name="comp1800 template" content="My 1800 App">
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.0/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!------------------------------------------>
+        <!-- Bootstrap Library CSS JS CDN go here -->
+        <!------------------------------------------>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.0/assets/css/docs.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+        <!-------------------------------------------------------->
+        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+        <!-------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet"
+            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+        <!-------------------------------------------->
+        <!-- Other libraries and styles of your own -->
+        <!-------------------------------------------->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
 
-    <style>
-        .account {
-            margin: 20px;
-        }
+        <style>
+            .account {
+                margin: 20px;
+            }
 
-        .username {
-            margin: 20px;
-            margin-bottom: 0;
-            margin-top: 10px;
-        }
+            .username {
+                margin: 20px;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
 
-        .email {
-            margin: 20px;
-            margin-top: 0;
-        }
+            .email {
+                margin: 20px;
+                margin-top: 0;
+            }
 
-        .notifications {
-            margin: 20px;
-            margin-top: 40px;
-        }
+            .notifications {
+                margin: 20px;
+                margin-top: 40px;
+            }
 
-        .hstack {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            align-self: stretch;
-        }
-    </style>
-</head>
+            .hstack {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                align-self: stretch;
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
+        <!------------------------------>
+        <!-- Your HTML Layout go here -->
+        <!------------------------------>
+        <!--Nav Bar-->
+        <nav id="navbarplaceholder"></nav>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!--Nav Bar-->
-    <nav id="navbarplaceholder"></nav>
+        <!--Settings page cards-->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-8 mx-auto">
 
-    <!--Settings page cards-->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8 mx-auto">
-
-                <!--User information-->
-                <div class="my-4">
-                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="false">Settings</a>
-                        </li>
-                    </ul>
-                    <form>
-                        <div class="row mt-5 align-items-center">
-                            <div class="col-md-3 text-center mb-5">
-                                <div class="avatar avatar-xl">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..."
-                                        class="avatar-img rounded-circle" />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="row align-items-center">
-                                    <div class="col-md-7">
-                                        <h4 class="mb-1"><span class="name-goes-here"></span></h4>
+                    <!--User information-->
+                    <div class="my-4">
+                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="false">Settings</a>
+                            </li>
+                        </ul>
+                        <form>
+                            <div class="row mt-5 align-items-center">
+                                <div class="col-md-3 text-center mb-5">
+                                    <div class="avatar avatar-xl">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..."
+                                            class="avatar-img rounded-circle" />
                                     </div>
                                 </div>
-                                <div class="row mb-4">
-                                    <div class="col-md-7">
-                                        <p class="text-muted">
-                                        </p>
-                                    </div>
-                                    <div class="col">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="my-4" />
-                        <fieldset id="personalInfoFields" disabled>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="firstname">First name</label>
-                                    <input type="text" id="firstname" class="form-control" />
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="lastname">Last name</label>
-                                    <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <!--Edit and confirm buttons-->
-                        <div class="d-flex justify-content-end mt-5">
-                            <button type="button" class="btn btn-secondary" onclick="editUserSettings()">Edit</button>
-                            <span style="width: 10px"></span>
-
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModal" onclick="myFunction()">
-                                Save
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                <div class="col">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7">
+                                            <h4 class="mb-1"><span class="name-goes-here"></span></h4>
                                         </div>
-                                        <div class="modal-body">
-                                            Are you sure you want to save these changes?
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-md-7">
+                                            <p class="text-muted">
+                                            </p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <!--Modal confirmation buttons-->
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                                onclick="closeModal()">Close</button>
-                                            <button type="button" class="btn btn-info"
-                                                onclick="saveUserInfo(), closeModal()">Save</button>
+                                        <div class="col">
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <hr class="my-4" />
+                            <fieldset id="personalInfoFields" disabled>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" id="firstname" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!--Edit and confirm buttons-->
+                            <div class="d-flex justify-content-end mt-5">
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="editUserSettings()">Edit</button>
+                                <span style="width: 10px"></span>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal" onclick="myFunction()">
+                                    Save
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to save these changes?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <!--Modal confirmation buttons-->
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                    onclick="closeModal()">Close</button>
+                                                <button type="button" class="btn btn-info"
+                                                    onclick="saveUserInfo(), closeModal()">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <hr class="my-4" />
                 </div>
-                <hr class="my-4" />
+                </form>
             </div>
-            </form>
         </div>
-    </div>
-    </div>
-    </div>
-
-    <!--Email notifications-->
-    <div class="notifications">
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Email Notifications</label>
         </div>
-    </div>
+        </div>
 
+        <!--Email notifications-->
+        <div class="notifications">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Email Notifications</label>
+            </div>
+        </div>
 
+        <!--Footer-->
+        <footer id="footerplaceholder"></footer>
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
 
-    <!--Footer-->
-    <footer id="footerplaceholder"></footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+        <!-- Link to scripts of your own -->
+        <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+        <script src="./scripts/skeleton.js"></script>
+        <script src="./scripts/settings.js"></script>
 
-    <!-- Link to scripts of your own -->
-    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/settings.js"></script>
-
-</body>
+    </body>
 
 </html>
