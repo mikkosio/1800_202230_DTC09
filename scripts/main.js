@@ -1,4 +1,3 @@
-//Populate the landing page task card. Authethicate user and then displays sorted tasks by remaining time (most urgent)
 function populateMainPage() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -68,9 +67,9 @@ function calculateDate(date) {
 //Updates the timer for the main page tasks
 function updateTime() {
     setInterval(async () => {
-        populateMainPage()
     }, 400)
 }
 
-updateTime()
+populateMainPage()
+
 

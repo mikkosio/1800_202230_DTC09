@@ -240,7 +240,8 @@ img {
     }
 
     #task1, #task2, #task3 {
-        font-size: 40px;
+        font-size: 100%;
+        white-space: nowrap;
     }
 
 }
