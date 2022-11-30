@@ -1,4 +1,4 @@
-# Inter-Task-Tivity (Add your Title here)
+# Inter-Task-Tivity
 
 * [General info](#general-info)
 * [Technologies](#technologies)
