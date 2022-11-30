@@ -56,7 +56,7 @@ function updateTasks() {
             milestone_4 = "incomplete"
           }
 
-          if (total_tasks / 10 >= 1000) {
+          if (total_tasks / 10 >= 100) {
             milestone_5 = "completed"
           } else {
             milestone_5 = "incomplete"
