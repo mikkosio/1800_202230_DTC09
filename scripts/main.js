@@ -67,9 +67,11 @@ function calculateDate(date) {
 //Updates the timer for the main page tasks
 function updateTime() {
     setInterval(async () => {
+        populateMainPage()
     }, 400)
 }
 
-populateMainPage()
+updateTime()
+
 
 
